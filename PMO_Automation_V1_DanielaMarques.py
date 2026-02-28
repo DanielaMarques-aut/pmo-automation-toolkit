@@ -1,4 +1,4 @@
-PMO_Automation_V1_DanielaMarques.py
+
 # Project: Automated PMO Risk Tracker
 # Goal: Automate the formatting of project risks for stakeholder reporting.
 project_name = "risk automation"
