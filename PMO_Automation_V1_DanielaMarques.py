@@ -21,6 +21,8 @@ TOP RISKS TO MITIGATE:
 ---------------------------------------
 """
 print(report)
+
+
 #AI Integration Plan
 #In V2, I will use an LLM API to automatically categorize these risks into 'High/Medium/Low' priority
 #I will use Prompt Engineering to turn this raw data into a professional email notification.
