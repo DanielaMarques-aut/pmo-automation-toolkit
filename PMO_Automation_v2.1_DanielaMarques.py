@@ -25,6 +25,7 @@ def run_pmo_automation_v1_2():
     
     # Converter a coluna Deadline para o formato de data real (Datetime)
     df['Deadline'] = pd.to_datetime(df['Deadline'])
+    
 
     # 3. TRANSFORMATION (Lógica BizOps)
     df['Variance'] = df['Budget_Allocated'] - df['Current_Spend']

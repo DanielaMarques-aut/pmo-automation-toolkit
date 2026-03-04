@@ -58,3 +58,4 @@ def executar_sessao():
 
     print("\n" + "="*60)
     print("LOG: Lógica de Prompting validada. Sistema pronto para conexão API.")
+    
