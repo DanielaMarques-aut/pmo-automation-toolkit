@@ -25,11 +25,12 @@ def run_pmo_automation_v1_2():
     
     # Converter a coluna Deadline para o formato de data real (Datetime)
     df['Deadline'] = pd.to_datetime(df['Deadline'])
-    
+
 
     # 3. TRANSFORMATION (Lógica BizOps)
     df['Variance'] = df['Budget_Allocated'] - df['Current_Spend']
     df['Days_To_Deadline'] = (df['Deadline'] - pd.Timestamp.now()).dt.days
+    
     
     # Health Status com lógica dupla: Financeira + Prazo
     def check_health(row):
