@@ -47,6 +47,9 @@ Categorizar a severidade do risco baseada no impacto financeiro.
 
 Clone o repositório: git clone https://github.com/DanielaMarques-aut/pmo-automation-toolkit
 
+
+V1.5: Integrated AI Logic Layer (Ready for API connection
+
 Instale as dependências: pip install pandas
 
 Execute: python PMO_Automation_V1_DanielaMarques.py
