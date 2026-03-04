@@ -44,6 +44,7 @@ def executar_visualizacao():
 output_path = "pmo_chart.png"
 plt.savefig(output_path)
 
+
 executar_visualizacao()
 
 
