@@ -70,6 +70,7 @@ def gerar_sistema_pmo():
     
     print("\n--- EXEMPLO DE PROMPT GERADO (LINHA 1) ---")
     print(df['Prompt_IA'].iloc[0])
+    
 
 if __name__ == "__main__":
     gerar_sistema_pmo()
