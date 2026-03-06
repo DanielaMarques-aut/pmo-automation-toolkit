@@ -7,9 +7,12 @@ Este código consolida:
 3. Visualização de Saúde de Portfólio (Storytelling)
 """
 
+import matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+matplotlib.use("TkAgg")
+
 
 def gerar_sistema_pmo():
     print("🚀 Processamento de Portfólio AI-Ops...")
@@ -70,7 +73,7 @@ def gerar_sistema_pmo():
     
     print("\n--- EXEMPLO DE PROMPT GERADO (LINHA 1) ---")
     print(df['Prompt_IA'].iloc[0])
-    
+
 
 if __name__ == "__main__":
     gerar_sistema_pmo()
