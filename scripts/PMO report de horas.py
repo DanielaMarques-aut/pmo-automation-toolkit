@@ -7,9 +7,11 @@ import numpy as np
 path =r"C:\Users\daniq\carrer\Data/PMO_report_horas.xlsx" 
 import os
 df = pd.read_excel(path)
+df.columns = df.columns.str.strip()
 # Verificar se as colunas foram lidas corretamente
 print("Colunas encontradas:")
 print(df.columns)
+df[df.columns] = df[df.columns].apply(lambda x: x.str.strip())
 # Verificar os tipos de dados de cada coluna
 print(df.dtypes)
 # Limpeza e conversão das colunas de horas
