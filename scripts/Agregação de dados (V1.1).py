@@ -22,9 +22,10 @@ def run_analysis():
         # 2. LÓGICA DE AGRUPAMENTO 
         # Agrupamos por Departamento e somamos os gastos
         resumo_departamento = df.groupby('Departamento')['Gasto_Real'].agg(['sum', 'mean', 'count']).reset_index()
-        
-        # Renomear colunas para formato Executivo
         resumo_departamento.columns = ['Departamento', 'Total_Gasto', 'Media_Gasto', 'Qtd_Projetos']
+        resumo_departamento['Percentagem do Total'] = resumo_departamento['Total_Gasto'].div(df['Gasto_Real'].sum()).mul(100)
+        # Renomear colunas para formato Executivo
+        resumo_departamento.columns = ['Departamento', 'Total_Gasto', 'Media_Gasto', 'Qtd_Projetos', 'Percentagem do Total']
 
         # 3. IDENTIFICAÇÃO DE RISCO
         # Criar um resumo apenas de projetos com 'Erro'
