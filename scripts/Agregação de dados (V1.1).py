@@ -22,8 +22,10 @@ def run_analysis():
         # 2. LÓGICA DE AGRUPAMENTO 
         # Agrupamos por Departamento e somamos os gastos
         resumo_departamento = df.groupby('Departamento')['Gasto_Real'].agg(['sum', 'mean', 'count']).reset_index()
+        # Renomear colunas para formato Executivo
         resumo_departamento.columns = ['Departamento', 'Total_Gasto', 'Media_Gasto', 'Qtd_Projetos']
-        resumo_departamento['Percentagem do Total'] = resumo_departamento['Total_Gasto'].div(df['Gasto_Real'].sum()).mul(100)
+        # Calcular a percentagem do total gasto por departamento
+        resumo_departamento['Percentagem do Total'] = resumo_departamento['Total_Gasto'].div(df['Gasto_Real'].sum()).mul(100).round(2).apply(lambda x: f"{x}%") 
         # Renomear colunas para formato Executivo
         resumo_departamento.columns = ['Departamento', 'Total_Gasto', 'Media_Gasto', 'Qtd_Projetos', 'Percentagem do Total']
 
@@ -44,4 +46,31 @@ def run_analysis():
 
     except Exception as e:
         print(f"❌ Erro no processamento: {e}")
+
+    import matplotlib.pyplot as plt
+
+        # Ordenar os departamentos pelo gasto para ficar visualmente mais claro
+    df_departamentos = resumo_departamento.sort_values(by='Total_Gasto', ascending=False)
+
+        # Gráfico de barras para mostrar o gasto real por departamento
+    plt.figure(figsize=(8,5))
+    plt.bar(df_departamentos['Departamento'], df_departamentos['Total_Gasto'], color='skyblue')
+
+    # Adicionar rótulos de percentagem em cima das barras
+    for idx, row in df_departamentos.iterrows():
+        plt.text(
+            x=idx, 
+            y=row['Total_Gasto'] + max(df_departamentos['Total_Gasto']) * 0.01,  # Pequeno deslocamento para cima
+            s=f"{row['Percentagem do Total']}",
+            ha='center', 
+            
+    )
+
+    plt.title('Gasto Real por Departamento')
+    plt.xlabel('Departamento')
+    plt.ylabel('Gasto Real')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+    plt.savefig("gasto_departamento.png")
 run_analysis()
