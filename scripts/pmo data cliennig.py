@@ -1,5 +1,5 @@
 
-#pmo data cliennig
+#pmo data cleaning
 # O objetivo deste script é ler um arquivo CSV contendo dados de tempo gasto em projetos, 
 # limpar os dados (removendo o 'h' e convertendo para números), agregar o tempo por projeto e
 #  exportar um relatório final em formato CSV. 
@@ -7,6 +7,7 @@
 #  facilitando a tomada de decisões informadas.
 import os
 import pandas as pd
+import sys
 
 #Define the file name
 File_name = 'dados_pmo_segunda.csv'
