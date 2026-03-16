@@ -16,10 +16,16 @@ def processar_dados(file_name):
     print(f"Processando o arquivo: {file_name}")
 
     #Verificar se o arquivo existe
+    #Se o arquivo não for encontrado, exibe uma mensagem de erro e encerra a função.
     if not os.path.isfile(file_name):
         print(f"Arquivo {file_name} não encontrado.")
         return
     #Ler o arquivo csv usando pandas
+    #O arquivo é lido em um DataFrame do pandas. Se houver um erro na leitura, ele é capturado e exibido.
+    #Args: file_name (str): O nome do arquivo CSV a ser processado.
+    #Returns: pd.DataFrame: O DataFrame contendo os dados lidos do arquivo.
+    # Se o arquivo for lido com sucesso, os dados são carregados em um DataFrame para processamento adicional.
+    # Se o dataframe estiver vazio (ou seja, contém apenas cabeçalhos sem dados), uma mensagem de aviso é exibida e a função é encerrada para evitar erros posteriores no processamento.
     try:
         df = pd.read_csv(file_name)
         if df.empty:
@@ -28,17 +34,27 @@ def processar_dados(file_name):
         print("Dados carregados com sucesso!")
         
     #LIMPEZA DOS DADOS
-     # Removemos o 'h', convertemos para número e lidamos com vazios (NaN)
+    # Removemos o 'h', convertemos para número e lidamos com vazios (NaN)
+    #Limpa os dados de tempo gasto removendo o sufixo 'h' e tratando nulos.
+    #Args:df (pd.DataFrame): DataFrame original com a coluna 'tempo_gasto'.
+    #Returns: pd.DataFrame: DataFrame limpo com 'tempo_gasto' como tipo numérico e sem linhas nulas.
         df["tempo_gasto"] =  pd.to_numeric(df["tempo_gasto"].astype(str).str.replace("h","",case=False), errors='coerce')
     # Removemos linhas onde o Tempo_Gasto não pôde ser convertido (NaN)
         df = df.dropna(subset=["tempo_gasto"])
+
     #AGREGAÇÃO
+    #Agrega o tempo gasto por projeto, somando os valores e ordenando do menor para o maior.
+    #Args:df (pd.DataFrame): DataFrame limpo com a coluna 'tempo_gasto' como numérica.
+    #Returns: pd.DataFrame: DataFrame agregado com o total de tempo gasto por projeto, ordenado do menor para o maior.
         resumo=df.groupby("projeto")["tempo_gasto"].sum().reset_index().sort_values(by="tempo_gasto", ascending=True)
     #OUTPUT FINAL
         print("\n📊 RELATÓRIO DE HORAS POR PROJETO:")
         print(resumo)
         
     # Guardar o resultado num novo Excel para o teu chefe
+    # O relatório é exportado como 'relatorio_final.csv' na mesma pasta do script.
+    #Args:resumo (pd.DataFrame): DataFrame agregado com o total de tempo gasto por projeto.
+    #Returns: o arquivo em caso de sucesso, ou uma mensagem de erro caso haja falha na exportação.
         resumo.to_csv('relatorio_final.csv', index=False)
         print("\n✅ Relatório exportado como 'relatorio_final   .csv'")
     except Exception as e:
