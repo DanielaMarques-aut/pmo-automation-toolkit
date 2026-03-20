@@ -118,6 +118,8 @@ def enviar_email(alertas):
     msg['Subject'] = f"🚨 Relatório de Riscos - {len(alertas)} itens"
     msg['From'] = EMAIL_USER
     msg['To'] = EMAIL_USER
+    msg.set_content("Olá,\n\nSegue o resumo dos riscos detectados no relatório PMO.\n\nAtenciosamente,\nAgente de Riscos PMO")
+    msg.add_attachment(open(ARQUIVO_EXCEL, 'rb').read(), maintype='application', subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename=ARQUIVO_EXCEL)
     
     conteudo = "Resumo de Riscos\n\n"
     for a in alertas:
