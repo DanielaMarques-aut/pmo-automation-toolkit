@@ -1,0 +1,75 @@
+2026-03-21 11:52:50,481 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 11:52:50,481 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 11:52:50,481 - ERROR - \u274c ERRO: Ficheiro CSV de entrada não encontrado: relatorio_final.csv
+2026-03-21 11:53:00,864 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 11:53:00,864 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 11:53:00,864 - ERROR - \u274c ERRO: Ficheiro CSV de entrada não encontrado: relatorio_final.csv
+2026-03-21 11:54:14,331 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 11:54:14,331 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 11:54:14,331 - ERROR - \u274c ERRO: Ficheiro CSV de entrada não encontrado: relatorio_final.csv
+2026-03-21 11:56:35,075 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 11:56:35,077 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 11:56:35,224 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 11:56:35,291 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 11:56:35,322 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 11:56:35,322 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 11:56:35,343 - WARNING - 1 novos riscos encontrados. A guardar... 
+2026-03-21 11:56:35,369 - ERROR - \U0001f4a5 FALHA NO SISTEMA: set_content not valid on multipart
+2026-03-21 12:00:30,140 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:00:30,140 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:00:30,184 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,235 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:00:30,284 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:00:30,284 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:00:30,316 - INFO - Nenhum novo risco encontrado para notificação.
+2026-03-21 12:00:30,316 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:00:30,316 - INFO - Processo diário do PMO concluído com sucesso!
+2026-03-21 12:02:56,040 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:02:56,040 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:02:56,088 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:02:56,112 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:02:56,112 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:02:56,112 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:02:56,152 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:02:56,152 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:02:56,184 - WARNING - 1 novos riscos encontrados. A guardar... 
+2026-03-21 12:02:56,212 - ERROR - \U0001f4a5 FALHA NO SISTEMA: set_content not valid on multipart
+2026-03-21 12:09:47,630 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:09:47,630 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:09:47,646 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:09:47,694 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:09:47,694 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:09:47,694 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:09:47,710 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:09:47,710 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:09:47,758 - INFO - Nenhum novo risco encontrado para notificação.
+2026-03-21 12:09:47,758 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:09:47,758 - INFO - Processo diário do PMO concluído com sucesso!
+2026-03-21 12:10:19,441 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:10:19,441 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:10:19,470 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:10:19,503 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:19,503 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:19,503 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:19,524 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:10:19,524 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:10:19,560 - INFO - Nenhum novo risco encontrado para notificação.
+2026-03-21 12:10:19,560 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:10:19,560 - INFO - Processo diário do PMO concluído com sucesso!
+2026-03-21 12:10:52,875 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:10:52,875 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:10:52,954 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:10:53,000 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:53,000 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:53,000 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:10:53,043 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:10:53,043 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:10:53,085 - WARNING - 1 novos riscos encontrados. A guardar... 
+2026-03-21 12:10:56,620 - INFO - \U0001f4e7 Email de alerta enviado com sucesso!
+2026-03-21 12:10:56,699 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:10:56,699 - INFO - Processo diário do PMO concluído com sucesso!
