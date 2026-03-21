@@ -1,0 +1,12 @@
+2026-03-21 12:28:14,928 - INFO - Variáveis de ambiente carregadas com sucesso.
+2026-03-21 12:28:14,928 - INFO - \U0001f680 Iniciando processo diário do PMO...
+2026-03-21 12:28:14,963 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeçalho do relatório: Report_Quinta.xlsx
+2026-03-21 12:28:15,022 - INFO - Cores aplicadas com base no status. Relatório atualizado: Report_Quinta.xlsx
+2026-03-21 12:28:15,022 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:28:15,062 - WARNING - 3 novos riscos encontrados. A guardar... 
+2026-03-21 12:28:17,539 - INFO - \U0001f4e7 Email de alerta enviado com sucesso!
+2026-03-21 12:28:17,596 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:28:17,598 - INFO - Processo diário do PMO concluído com sucesso!
