@@ -1,0 +1,5 @@
+Projeto Automacao_Relatorios_Abril iniciado em 2026-04-03 06:54:11.220206
+Recuperação de Quarta-feira concluída.
+Caminho do objeto: C:\Users\daniq\Desktop\PMO_Projects\Automacao_Relatorios_Abril
+Apenas o nome: setup_log_20260403_0654.txt
+Localização do Objeto: C:\Users\daniq\Desktop\PMO_Projects\Automacao_Relatorios_Abril\setup_log_20260403_0654.txt

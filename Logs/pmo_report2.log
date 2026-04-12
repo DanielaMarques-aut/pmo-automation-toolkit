@@ -1,0 +1,86 @@
+2026-03-21 12:28:14,928 - INFO - Vari·veis de ambiente carregadas com sucesso.
+2026-03-21 12:28:14,928 - INFO - \U0001f680 Iniciando processo di·rio do PMO...
+2026-03-21 12:28:14,963 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:28:15,007 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:28:15,022 - INFO - Cores aplicadas com base no status. RelatÛrio atualizado: Report_Quinta.xlsx
+2026-03-21 12:28:15,022 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:28:15,062 - WARNING - 3 novos riscos encontrados. A guardar... 
+2026-03-21 12:28:17,539 - INFO - \U0001f4e7 Email de alerta enviado com sucesso!
+2026-03-21 12:28:17,596 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:28:17,598 - INFO - Processo di·rio do PMO concluÌdo com sucesso!
+2026-03-21 12:32:47,078 - INFO - Vari·veis de ambiente carregadas com sucesso.
+2026-03-21 12:32:47,078 - INFO - \U0001f680 Iniciando processo di·rio do PMO...
+2026-03-21 12:32:47,109 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-21 12:32:47,152 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:32:47,152 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:32:47,152 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx
+2026-03-21 12:32:47,162 - INFO - Cores aplicadas com base no status. RelatÛrio atualizado: Report_Quinta.xlsx
+2026-03-21 12:32:47,162 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-21 12:32:47,195 - INFO - Nenhum novo risco encontrado para notificaÁ„o.
+2026-03-21 12:32:47,195 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-21 12:32:47,195 - INFO - Processo di·rio do PMO concluÌdo com sucesso!
+2026-03-22 16:23:26,575 - INFO - Vari·veis de ambiente carregadas com sucesso.
+2026-03-22 16:23:26,575 - INFO - \U0001f680 Iniciando processo di·rio do PMO...
+2026-03-22 16:23:26,623 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-22 16:23:26,655 - INFO - A formatar visualmente o cabeÁalho do relatÛrio: Report_Quinta.xlsx, aplicando cor azul escuro e fonte branca.
+2026-03-22 16:23:26,671 - INFO - Cores aplicadas com base no status. RelatÛrio atualizado: Report_Quinta.xlsx
+2026-03-22 16:23:26,671 - INFO - \u2728 Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Alpha - Cor: C6EFCE
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Beta - Cor: FFEB9C
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Alpha - Cor: C6EFCE
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Gamma - Cor: FFC7CE
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Beta - Cor: FFC7CE
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Delta - Cor: FFEB9C
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: Eter - Cor: FFC7CE
+2026-03-22 16:23:26,687 - INFO - Verificando tarefa: None - Cor: FFEB9C
+2026-03-22 16:23:26,687 - INFO - \u2705 Tudo em dia! Nenhum novo risco detectado.
+2026-03-22 16:23:26,687 - INFO - Nenhum novo risco encontrado para notificaÁ„o.
+2026-03-22 16:23:26,687 - INFO - Agente de Riscos PMO executado com sucesso!
+2026-03-22 16:23:26,687 - INFO - Processo di·rio do PMO concluÌdo com sucesso!
+2026-03-24 06:40:49,319 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-24 06:40:49,320 - INFO - Vari√°veis de ambiente carregadas com sucesso.
+2026-03-24 06:40:49,320 - INFO -  Iniciando processo di√°rio do PMO...
+2026-03-24 06:40:49,363 - INFO - Aplicar cores com base no status: Report_Quinta.xlsx
+2026-03-24 06:40:49,424 - INFO - A formatar visualmente o cabe√ßalho do relat√≥rio: Report_Quinta.xlsx, aplicando cor azul escuro e fonte branca.
+2026-03-24 06:40:49,424 - INFO - Cores aplicadas com base no status. Relat√≥rio atualizado: Report_Quinta.xlsx
+2026-03-24 06:40:49,426 - INFO - ‚ú® Report Profissional gerado: Relatorio_Formatado_PMO.xlsx
+2026-03-24 06:40:49,441 - INFO - üîç A testar a configura√ß√£o da API do Slack...
+2026-03-24 06:40:49,443 - INFO - url_slack: Configurada (Primeiros 5 caracteres: https...)
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Alpha - Cor: C6EFCE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Beta - Cor: FFEB9C
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Alpha - Cor: C6EFCE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Gamma - Cor: FFC7CE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Beta - Cor: FFC7CE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Delta - Cor: FFEB9C
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: Eter - Cor: FFC7CE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: fff - Cor: FFC7CE
+2026-03-24 06:40:49,472 - INFO - Verificando tarefa: None - Cor: FFEB9C
+2026-03-24 06:40:49,472 - INFO - Tudo em dia! Nenhum novo risco detectado.
+2026-03-24 06:40:49,472 - INFO - Nenhum novo risco encontrado para notifica√ß√£o.
+2026-03-24 06:40:49,472 - INFO - Agente de Riscos PMO executado com sucesso!, foram detectados: 0 novos riscos.
+2026-03-24 06:40:49,472 - INFO - Processo di√°rio do PMO conclu√≠do com sucesso! Foram processados 9 projetos em 0.15 segundos.
+2026-03-26 12:53:50,568 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-26 12:53:50,568 - INFO - Vari√°veis de ambiente carregadas com sucesso.
+2026-03-26 12:53:50,568 - ERROR - ERRO CR√çTICO: O Python n√£o encontrou o arquivo .env ou as vari√°veis!
+2026-03-28 15:46:21,419 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 15:47:04,299 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 15:51:04,846 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 15:51:04,848 - INFO - üîç A testar a configura√ß√£o da API do Slack...
+2026-03-28 15:51:04,848 - INFO - webhook_url: Configurado (Primeiros 5 caracteres: https...)
+2026-03-28 15:51:04,848 - INFO - token: Configurado (Primeiros 5 caracteres: xoxb-...)
+2026-03-28 15:51:04,848 - INFO - canal_id: Configurado (Primeiros 5 caracteres: C0AN4...)
+2026-03-28 15:54:42,736 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 15:57:01,278 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 15:59:32,731 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 16:00:35,399 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 16:01:35,590 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 16:06:27,938 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---
+2026-03-28 16:06:27,947 - ERROR - ‚ùå Ficheiro cr√≠tico em falta: dados_pmo_segunda.csv
+2026-03-28 16:06:27,947 - ERROR - üí• Falha na prepara√ß√£o dos dados.
+2026-03-28 16:06:27,947 - INFO - üîç A testar a configura√ß√£o da API do Slack...
+2026-03-28 16:06:27,947 - INFO - webhook_url: Configurado (Primeiros 5 caracteres: https...)
+2026-03-28 16:06:27,947 - INFO - token: Configurado (Primeiros 5 caracteres: xoxb-...)
+2026-03-28 16:06:27,947 - INFO - canal_id: Configurado (Primeiros 5 caracteres: C0AN4...)
+2026-03-28 16:11:29,960 - INFO - --- üöÄ Nova sess√£o iniciada e registada no ficheiro ---

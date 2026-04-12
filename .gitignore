@@ -1,0 +1,14 @@
+Ambientes Virtuais e Dependências
+venv/
+env/
+.env
+
+# Lixo de Sistema e Executáveis
+*.exe
+*.msi
+.DS_Store
+Thumbs.db
+
+# Cache do Python (Ficheiros temporários que o Python cria)
+__pycache__/
+*.py[cod]

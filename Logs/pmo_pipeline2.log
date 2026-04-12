@@ -1,0 +1,13 @@
+2026-03-13 13:04:31,552 - CRITICAL - Pipeline crashed: No module named 'openpyxl'
+2026-03-13 13:04:59,812 - CRITICAL - Pipeline crashed: No module named 'openpyxl'
+2026-03-13 13:05:04,416 - CRITICAL - Pipeline crashed: No module named 'openpyxl'
+2026-03-13 13:07:56,209 - INFO - 🎯 Starting Friday Close-out...
+2026-03-13 13:07:56,209 - ERROR - ❌ Failed during data processing: No module named 'openpyxl'
+2026-03-13 13:07:56,209 - CRITICAL - Pipeline crashed: No module named 'openpyxl'
+2026-03-13 13:09:14,335 - INFO - 🎯 Starting Friday Close-out...
+2026-03-13 13:09:14,351 - ERROR - ❌ Failed during data processing: No module named 'openpyxl'
+2026-03-13 13:09:14,351 - CRITICAL - Pipeline crashed: No module named 'openpyxl'
+2026-03-13 13:10:22,994 - INFO - 🎯 Starting Friday Close-out...
+2026-03-13 13:10:24,543 - INFO - ✅ Report saved to C:\Users\daniq\carrer\scripts\Output\PMO_Report.xlsx
+2026-03-13 13:10:24,575 - INFO - 📧 Connecting to mail server...
+2026-03-13 13:10:26,536 - INFO - 🚀 Email sent successfully!

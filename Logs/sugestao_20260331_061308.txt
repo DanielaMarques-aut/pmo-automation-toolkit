@@ -1,0 +1,8 @@
+Data: 2026-03-31 06:13:08.614394
+--------------------
+Projeto: Migração de Cloud | IA: A melhor estratégia de mitigação envolve uma abordagem multifacetada, priorizando a compreensão e gestão dos riscos:
+
+1.  **Análise de Causa Raiz e Reavaliação de Riscos:** Identificar as causas primárias do atraso e os riscos específicos que contribuem para o KPI de 35.5%. Priorizar os riscos de maior impacto/probabilidade e ajustar/criar planos de mitigação detalhados.
+2.  **Otimização do Cronograma e Foco no Caminho Crítico:** Replanejar o cronograma com base nas causas identificadas, focando nas tarefas do caminho crítico que podem ser aceleradas (fast-tracking/crashing) ou resequenciadas, se viável.
+3.  **Reavaliação de Recursos:** Assegurar que a equipa tem os recursos (humanos, financeiros, tecnológicos) adequados e com as competências necessárias para as fases seguintes. Considerar alocação adicional ou rebalanceamento.
+4.  **Comunicação e Transparência:** Manter os stakeholders informados sobre o novo plano, os riscos e as ações de mitigação. Escalar proativamente quaisquer impedimentos que possam comprometer o avanço.

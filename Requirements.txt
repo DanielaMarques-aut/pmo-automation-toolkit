@@ -1,0 +1,19 @@
+
+# Data Processing & Excel Integration
+pandas>=2.2.0
+openpyxl>=3.1.0
+
+# Network & Communication (Slack Webhooks)
+requests>=2.31.0
+
+# AI Engine & LLM Integration
+google-generativeai>=0.4.0
+
+# Environment & Security
+python-dotenv>=1.0.0
+
+# Infrastructure & Utilities
+pathlib>=1.0.1
+
+
+

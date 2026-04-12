@@ -1,0 +1,32 @@
+Task_ID,Task_Name,Status,Budget_Allocated,Actual_Spent
+T001,Project Charter and Kickoff,Completed,1500,1450
+T002,Stakeholder Analysis,Completed,2000,2000
+T003,Market Research,In Progress,5000,3200
+T004,Database Schema Design,Delayed,3500,4100
+T005,Frontend Framework Setup,In Progress,6000,2500
+T006,API Integration Development,Delayed,8000,9200
+T007,Security Vulnerability Audit,In Progress,4500,1200
+T008,User Interface Testing,In Progress,3000,500
+T009,Drafting Technical Manuals,In Progress,2500,0
+T010,Cloud Infrastructure Setup,In Progress,5000,1500
+Task_ID,Task_Name,Status,Budget_Allocated,Actual_Spent
+T001,Project Charter and Kickoff,Completed,1500,1450
+T002,Stakeholder Analysis,Completed,2000,2000
+T003,Market Research,In Progress,5000,3200
+T004,Database Schema Design,Delayed,3500,4100
+T005,Frontend Framework Setup,In Progress,6000,2500
+T006,API Integration Development,Delayed,8000,9200
+T007,Security Vulnerability Audit,In Progress,4500,1200
+T008,User Interface Testing,In Progress,3000,500
+T009,Drafting Technical Manuals,In Progress,2500,0
+T010,Cloud Infrastructure Setup,In Progress,5000,1500
+T001,Project Charter and Kickoff,Completed,1500,1450
+T002,Stakeholder Analysis,Completed,2000,2000
+T003,Market Research,In Progress,5000,3200
+T004,Database Schema Design,Delayed,3500,4100
+T005,Frontend Framework Setup,In Progress,6000,2500
+T006,API Integration Development,Delayed,8000,9200
+T007,Security Vulnerability Audit,In Progress,4500,1200
+T008,User Interface Testing,In Progress,3000,500
+T009,Drafting Technical Manuals,In Progress,2500,0
+T010,Cloud Infrastructure Setup,In Progress,5000,1500
