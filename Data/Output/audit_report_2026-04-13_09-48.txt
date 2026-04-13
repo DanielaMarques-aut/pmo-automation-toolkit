@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To resolve the three overdue projects, we must urgently reallocate technical talent from the high-spend IT and Product departments to eliminate current delivery bottlenecks. Concurrently, the disproportionately low investment in Security poses a significant operational risk that requires a strategic budget shift to protect our primary infrastructure assets.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

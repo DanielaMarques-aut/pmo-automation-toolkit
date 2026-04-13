@@ -9,6 +9,7 @@ having named loggers helps you identify exactly which part of the engine generat
 Benefit: Instead of messy prints, we have a history of what the AI did.
 """
 import logging
+from matplotlib import pyplot as plt
 from datetime import datetime
 from pathlib import Path
 import os
@@ -68,10 +69,48 @@ def get_ai_insight(summary_text: str, retries: int = 3):
             log.error(f"Error in IA analysis: {e}")
     return "IA unavailable at the moment."
 
+def create_department_summary_chart(dept_summary: Dict[str, float], output_file: str = 'dept_summary_chart.png') -> None:
+    """
+    Gera um gráfico de barras ordenado a partir de um sumário de departamentos.
+    
+    Princípios de Clean Code aplicados:
+    - Semantic Type Hinting: Uso de Dict[str, float] para clareza de manutenção.
+    - Snake_case: Variáveis e funções com nomes descritivos (ex: dept_summary).
+    - Fail-Fast logic: Idealmente, validaríamos se o dicionário está vazio antes de processar.
+    """
+    
+    # Ordenação dos dados: Essencial para uma leitura rápida de Ops/PMO
+    # Transformamos o dicionário numa lista de tuplos ordenada pelo valor (item[1])
+    sorted_items = sorted(dept_summary.items(), key=lambda item: item[1])
+    departments = [item[0] for item in sorted_items]
+    values = [item[1] for item in sorted_items]
+
+    # Substituição do .figure() por subplots para maior controlo (Standard Profissional)
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Gráfico de barras horizontais (barh) facilita a leitura de nomes de departamentos longos
+    bars = ax.barh(departments, values, color='#2c3e50')
+    
+    # Customização técnica para Business Ops
+    ax.set_title('Distribuição de Carga Operacional por Departamento', fontsize=14, fontweight='bold')
+    ax.set_xlabel('Volume de Tarefas / Budget', fontsize=12)
+    ax.set_ylabel('Departamento', fontsize=12)
+    
+    # Adiciona etiquetas de dados para evitar ambiguidade
+    ax.bar_label(bars, padding=3)
+    
+    # Previne o corte de labels (labels truncation)
+    plt.tight_layout()
+    
+    # Guardar o ficheiro (Sem usar plt.show() para evitar interrupções no workflow)
+    plt.savefig(f"Data/output/{output_file}")
+    log.info(f"Relatório visual gerado com sucesso: {output_file}")
+    plt.show()  # Opcional: Mostrar o gráfico para validação visual
+
 def main():
     # --- CLEAN CODE: FAIL-FAST INGESTION ---
     file_path: str = "Data/Raw/projects.csv"
-    report_dir: str = "output"
+    report_dir: str = "Data/output"
 
     if not Path(file_path).exists() or not Path(file_path).is_file():
         log.error(f"❌ Error: The file {file_path} does not exist.")
@@ -92,7 +131,8 @@ def main():
         # Agregação por Departamento (Lição de Quinta-feira)
         # O GroupBy reduz a complexidade para a IA ler melhor.
         dept_summary: Dict[str, float] = df.groupby('Department')['Budget'].sum().to_dict()
-        
+        create_department_summary_chart(dept_summary)
+
         # Auditoria de Atrasos
         today: pd.Timestamp = pd.to_datetime('today')
         overdue_count: int = df[(df['Deadline'] < today) & (df['Status'] != 'Completed')].shape[0]

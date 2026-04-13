@@ -30,3 +30,40 @@
 2026-04-12 15:42:23,343 - INFO - • security: 5000€
 2026-04-12 15:42:23,345 - INFO - ==================================================
 2026-04-12 15:42:23,346 - INFO - ✅ Audit completed in 20.2s.
+2026-04-13 09:47:18,144 - INFO - 🤖 Generating AI insights...
+2026-04-13 09:47:18,144 - INFO - AFC is enabled with max remote calls: 10.
+2026-04-13 09:47:41,893 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-13 09:47:41,908 - INFO - ✅ Report saved to output/audit_report_2026-04-13_09-47.txt
+2026-04-13 09:47:41,908 - INFO - 
+==================================================
+2026-04-13 09:47:41,910 - INFO - 📊 Executive Report
+2026-04-13 09:47:41,910 - INFO - ==================================================
+2026-04-13 09:47:41,910 - INFO - Insights from AI: Given that nearly 80% of the budget is concentrated in IT and Product while three projects remain overdue, we face a significant financial risk from operational bottlenecks and potential sunk costs. We must immediately reallocate technical oversight resources to clear the project backlog and increase the Security budget to adequately protect our disproportionate investment in technology assets.
+2026-04-13 09:47:41,910 - INFO - --------------------------------------------------
+2026-04-13 09:47:41,912 - INFO - Budget Distribution by Department:
+2026-04-13 09:47:41,912 - INFO - • Data: 18000€
+2026-04-13 09:47:41,912 - INFO - • IT: 66500€
+2026-04-13 09:47:41,913 - INFO - • Marketing: 8200€
+2026-04-13 09:47:41,913 - INFO - • Product: 45000€
+2026-04-13 09:47:41,913 - INFO - • security: 5000€
+2026-04-13 09:47:41,913 - INFO - ==================================================
+2026-04-13 09:47:41,913 - INFO - ✅ Audit completed in 26.9s.
+2026-04-13 09:48:33,259 - INFO - Relatório visual gerado com sucesso: dept_summary_chart.png
+2026-04-13 09:48:41,579 - INFO - 🤖 Generating AI insights...
+2026-04-13 09:48:41,583 - INFO - AFC is enabled with max remote calls: 10.
+2026-04-13 09:48:59,146 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-13 09:48:59,147 - INFO - ✅ Report saved to output/audit_report_2026-04-13_09-48.txt
+2026-04-13 09:48:59,147 - INFO - 
+==================================================
+2026-04-13 09:48:59,155 - INFO - 📊 Executive Report
+2026-04-13 09:48:59,155 - INFO - ==================================================
+2026-04-13 09:48:59,155 - INFO - Insights from AI: To resolve the three overdue projects, we must urgently reallocate technical talent from the high-spend IT and Product departments to eliminate current delivery bottlenecks. Concurrently, the disproportionately low investment in Security poses a significant operational risk that requires a strategic budget shift to protect our primary infrastructure assets.
+2026-04-13 09:48:59,155 - INFO - --------------------------------------------------
+2026-04-13 09:48:59,155 - INFO - Budget Distribution by Department:
+2026-04-13 09:48:59,155 - INFO - • Data: 18000€
+2026-04-13 09:48:59,155 - INFO - • IT: 66500€
+2026-04-13 09:48:59,155 - INFO - • Marketing: 8200€
+2026-04-13 09:48:59,155 - INFO - • Product: 45000€
+2026-04-13 09:48:59,155 - INFO - • security: 5000€
+2026-04-13 09:48:59,155 - INFO - ==================================================
+2026-04-13 09:48:59,155 - INFO - ✅ Audit completed in 27.5s.
