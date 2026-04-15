@@ -2,9 +2,14 @@
 # Data Processing & Excel Integration
 pandas>=2.2.0
 openpyxl>=3.1.0
+numpy>=1.24.0
 
-# Network & Communication (Slack Webhooks)
+# Visualization & Analysis
+matplotlib>=3.7.0
+
+# Network & Communication
 requests>=2.31.0
+slack-sdk>=3.23.0
 
 # AI Engine & LLM Integration
 google-generativeai>=0.4.0
@@ -12,8 +17,9 @@ google-generativeai>=0.4.0
 # Environment & Security
 python-dotenv>=1.0.0
 
-# Infrastructure & Utilities
-pathlib>=1.0.1
+# Optional: Database Support (V2.0+)
+# psycopg2-binary>=2.9.0  # PostgreSQL driver
+# sqlalchemy>=2.0.0       # ORM for database abstraction
 
 
 
