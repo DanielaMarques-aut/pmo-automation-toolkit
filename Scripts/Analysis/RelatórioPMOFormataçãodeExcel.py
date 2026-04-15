@@ -1,10 +1,65 @@
-# Relatório PMO - Formatação de Excel
-# Learning Python with a fun project: Formatting an Excel report for PMO!
-# This script reads a CSV file, converts it to Excel, and applies some styling to make it look professional.
-# The goal is to automate the generation of a visually appealing report that can be easily shared with stakeholders.
-# Included colors based on status, bold headers, and a clean layout to enhance readability.
-# Sent email with the formatted report as an attachment to ensure that the PMO team receives the latest insights without any manual effort.
-# The email includes only the new risks detected in the report, making it easier for the team to focus on what matters most.
+"""
+PMO Report Formatter & Risk Alert System: Excel Styling & Automation Module.
+
+This comprehensive module automates the entire PMO reporting lifecycle: data loading,
+Excel formatting with professional styling, risk detection, and automated alert
+distribution via email and Slack. It serves as the main orchestration engine
+for executive report generation and stakeholder communication.
+
+Primary Purpose:
+    Generate professional Excel reports with conditional formatting and
+    color-coded risk visualization. Detect new risks automatically by
+    comparing against historical memory. Distribute alerts to stakeholders
+    via email and Slack messaging. Maintain audit trails for compliance.
+
+Key Concepts:
+    - Excel Formatting: OpenPyXL styling (Font, PatternFill) for reports
+    - Memory System: JSON-based risk tracking to identify NEW risks only
+    - Risk Detection: Color-based identification (red tasks = high risk)
+    - Multi-Channel Alerting: Email + Slack for redundant communication
+    - Data Validation: Multiple external dependency imports (config, utils)
+
+Workflow:
+    1. VERIFICATION: Check environment readiness (.env file existence)
+    2. LOAD DATA: Read CSV project data, validate against memory
+    3. FORMAT EXCEL: Apply professional styling, color-code by status
+    4. DETECT RISKS: Identify red-colored (high-risk) tasks
+    5. COMPARE: Check against memory file to find NEW risks only
+    6. ALERT: Send new risk notifications via email and Slack
+    7. UPDATE MEMORY: Store notified risks to prevent duplicate alerts
+
+Risk Detection System:
+    - Scans Excel for tasks marked with COR_ALVO (target color = red)
+    - Compares detected risks against alertas_enviados.json memory file
+    - Only sends alerts for NEW risks (not previously notified)
+    - Updates memory file after successful notification
+
+External Dependencies:
+    - config module: Color constants, file paths, credentials
+    - data_utils module: Memory loading/saving, data validation
+    - excel_formatter module: Conditional formatting and styling
+    - notificaçao module: Slack integration and API testing
+    - notifications module: Email sending via SMTP
+
+Component Functions:
+    - verificar_ambiente(): Pre-flight checks for .env and config
+    - rodar_agente(): Main risk detection and alerting agent
+
+Dependencies:
+    - openpyxl: Excel file manipulation and styling
+    - pandas: CSV reading, data validation, Excel export
+    - json: Risk memory file (JSON format)
+    - smtplib: Email sending via SMTP
+    - logging: Audit trail and error tracking
+    - pathlib: Cross-platform file paths
+    - dotenv: Environment variable isolation
+    - typing: Type hints for function signatures
+
+Author: Daniela Marques (PMO Automation Team) | Date: 2026-04-15
+Integrations: Slack, Gmail SMTP, Config system, Data utils, Excel formatter
+Schedule: Runs after daily report generation for risk alerting
+
+"""
 
 import json
 import os

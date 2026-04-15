@@ -1,11 +1,50 @@
-# PROJECT: Automated PMO Risk & Budget Tracker (V1.2 - Resilience Update)
-# GOAL: Data Cleaning, Date Handling & Integrity Checks
-# AUTHOR: Daniela Marques | DATE: Tuesday, March 3rd, 2026
+"""
+Automated PMO Risk & Budget Tracker: Resilience & Data Integrity Module (V1.2).
+
+This module extends V1 with robust data cleaning, datetime handling, and integrity
+checks. It demonstrates enterprise-grade approaches to handling real-world data
+anomalies (missing budgets, mixed date formats, decimal conversions).
+
+Primary Purpose:
+    Enhance V1 with production-grade data validation. Handle missing values
+    (None/NaN) gracefully via fillna(). Parse mixed datetime formats. Detect
+    data quality issues early to prevent downstream processing failures.
+
+Key Concepts:
+    - Data Cleaning: fillna() for missing numeric values
+    - DateTime Parsing: pd.to_datetime() handles multiple format variants
+    - Health Classification: Dual-condition logic (budget + deadline)
+    - Data Quality: Anticipate and handle real Excel import anomalies
+    - Fail-Fast Pattern: Validate early, escalate problems visibly
+
+Workflow:
+    1. LOAD DATA: DataFrames with known anomalies (None, mixed dates)
+    2. CLEAN STEP 1: Fill missing budgets with 0 to prevent errors
+    3. CLEAN STEP 2: Convert deadline strings to datetime objects
+    4. CALCULATE VARIANCE: Budget_Allocated - Current_Spend
+    5. CALCULATE DAYS_TO_DEADLINE: Future date arithmetic
+    6. HEALTH CHECK: Dual-condition logic (over-budget OR overdue)
+    7. AI ROADMAP: Document next steps for LLM integration in V2
+
+Data Cleaning Patterns:
+    - fillna(): Gracefully handle missing numeric values
+    - pd.to_datetime(): Parse various date string formats
+    - Boolean masking: Multi-condition filtering for health status
+
+Dependencies:
+    - pandas: DataFrame operations, datetime parsing
+    - datetime: Timestamp comparison and arithmetic
+
+Author: Daniela Marques | Date: 2026-04-15 | Version: 1.2
+Roadmap: V2 will integrate Gemini AI for auto-generated recommendations
+
+"""
 
 import pandas as pd
 import datetime
+from typing import Optional, Dict, List, Any
 
-def run_pmo_automation_v1_2():
+def run_pmo_automation_v1_2() -> Optional[Dict[str, Any]]:
     print(f"--- 🚀 PMO AUTOMATION V1.2: EXECUTION {datetime.datetime.now().strftime('%H:%M')} ---")
     
     # 1. DATA INGESTION (Simulando um Excel com erros comuns: NaNs e formatos de data mistos)

@@ -1,5 +1,12 @@
-# excel_formatter.py
-# Excel formatting utilities
+"""Excel Formatting and Styling Utilities
+
+Provides functions for applying professional formatting to Excel files including:
+- Conditional color formatting based on task status
+- Header styling with custom fonts and colors
+- Color-coded reporting for PMO task status visualization
+
+Uses openpyxl for low-level Excel manipulation and pandas for data integration.
+"""
 
 import logging
 from pandas import DataFrame
@@ -13,31 +20,47 @@ from config import (
 
 def aplicar_cores_status(arquivo_excel_entrada: str, df: DataFrame) -> None:
     """
-    Apply conditional formatting to an Excel file based on task status.
+    Apply conditional formatting to Excel file based on task status column.
 
-    This function loads an existing Excel file, applies color coding to the status column
-    based on the values in the DataFrame, formats the header row with dark blue background
-    and white text, and saves the formatted file.
-
-    Color coding:
-    - Red: Tasks with status "Atrasado" (Delayed)
-    - Green: Tasks with status "Concluído" (Completed)
-    - Yellow: All other statuses
+    Loads an Excel file and applies color coding to the status column based on
+    DataFrame values. Also formats header row with dark blue background and white text.
+    
+    Color Mapping:
+        - VERMELHO_FILL (Red): "Atrasado" (Delayed tasks)
+        - VERDE_FILL (Green): "Concluído" (Completed tasks)
+        - AMARELO_FILL (Yellow): All other statuses (In-progress, Pending, etc.)
+    
+    Header Styling:
+        - Background: Dark blue (AZUL_ESCURO_FILL)
+        - Font: White, bold (FONTE_BRANCA)
 
     Args:
-        arquivo_excel_entrada (str): Path to the input Excel file to be formatted.
-        df (pandas.DataFrame): DataFrame containing the data with a 'Status' column
-            that determines the color coding.
+        arquivo_excel_entrada: Path to the input Excel file to format.
+                              Must be a valid .xlsx file.
+        df: DataFrame containing at minimum a 'Status' column matching the Excel
+            data. Row count should match Excel data rows.
+
+    Returns:
+        None: Writes formatted file to disk with side effect. Output file path
+              is determined by ARQUIVO_EXCEL_FORMATADO constant.
 
     Raises:
         FileNotFoundError: If the input Excel file does not exist.
-        openpyxl.utils.exceptions.InvalidFileException: If the Excel file is corrupted.
+        openpyxl.utils.exceptions.InvalidFileException: If Excel file is corrupted.
         PermissionError: If there's no write permission for the output file.
+        KeyError: If 'Status' column not found in DataFrame.
 
     Note:
-        The function assumes the Excel file has data starting from row 2 (row 1 is header).
-        The status column is assumed to be column 3 (C).
-        The formatted file is saved with the name defined in ARQUIVO_EXCEL_FORMATADO.
+        - Assumes Excel data starts from row 2 (row 1 is header)
+        - Status column assumed to be column 3 (C)
+        - Output file overwrites ARQUIVO_EXCEL_FORMATADO if it exists
+        - Uses DataFrame index for row mapping, ensure index is correct
+
+    Example:
+        >>> import pandas as pd
+        >>> df = pd.DataFrame({'Status': ['Atrasado', 'Concluído', 'Em Progresso']})
+        >>> aplicar_cores_status('Report_Quinta.xlsx', df)
+        # Applies colors to Report_Quinta.xlsx and saves as Relatorio_Formatado_PMO.xlsx
     """
     logging.info(f"Aplicar cores com base no status: {arquivo_excel_entrada}")
     wb: Workbook = load_workbook(arquivo_excel_entrada)

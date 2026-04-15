@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: The high concentration of budget in IT and Product (78% of total) combined with three overdue projects indicates a critical risk of capital stagnation and delivery failure. We must immediately audit IT resource utilization and reallocate technical capacity to resolve the project backlog before further budget slippage occurs.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

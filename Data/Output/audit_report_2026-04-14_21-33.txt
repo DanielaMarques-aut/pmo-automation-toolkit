@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate the high risk of sunk costs, we must immediately audit the IT and Product departments—which command nearly 80% of the total budget—to reallocate technical personnel and clear the three overdue project bottlenecks. Furthermore, the security budget is critically underfunded relative to our IT investment and requires an urgent strategic increase to ensure operational resilience and protect our primary assets.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

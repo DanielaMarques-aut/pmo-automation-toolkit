@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: Given that 78% of the budget is concentrated in IT and Product while three projects remain overdue, we face a critical risk of capital inefficiency and diminishing returns on our largest investments. We must immediately audit these high-spend departments to reallocate technical talent toward clearing the backlog while increasing the disproportionately low Security budget to mitigate operational vulnerability.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

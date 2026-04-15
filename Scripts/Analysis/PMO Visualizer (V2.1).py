@@ -1,20 +1,133 @@
-"""
-PMO INTEGRATED SYSTEM (V2.0)
-----------------------------
-Este código consolida:
-1. Estrutura de Dados em Dicionário (Eficiência)
-2. Lógica de Prompt Engineering (IA Ready)
-3. Visualização de Saúde de Portfólio (Storytelling)
+"""PMO Integrated System with Prompt Engineering: Portfolio Health & AI Readiness (V2.1).
+
+This module consolidates core PMO capabilities: structured data organization,
+AI-ready prompt generation, and professional visualization. Bridges data systems
+with AI integration by preparing project data in formats suitable for LLM analysis.
+
+Primary Purpose:
+    Integrate three critical PMO functions into single cohesive system:
+    1. Efficient dictionary-based data structure (optimized for memory)
+    2. Prompt engineering for Gemini AI integration (future V3 with API)
+    3. Professional portfolio health visualization (executive summaries)
+    
+    Create production-ready pipeline transforming project data → AI insights → visuals
+
+Core Features:
+    - Portfolio Data as Dictionary: Fast lookups, structured organization
+    - Prompt Engineering: Format project info for AI analysis (context injection)
+    - Conditional Coloring: Visual health indicators (green=healthy, red=risky)
+    - Fail-Safe Output: Save PNG synchronously, then attempt interactive display
+    - Professional Formatting: Grid lines, zero-line reference, bold titles
+
+Dictionary Data Structure Advantages:
+    - Memory Efficient: Indexed access O(1) vs DataFrame O(n)
+    - Structured: Keys enforce naming conventions
+    - AI-Ready: Easy to serialize to JSON for API calls
+    - Readable: Key names self-document data meaning
+
+Prompt Engineering Pattern (For Gemini Integration):
+    The prompt format enables AI context understanding:
+    "Analise o projeto {nome}. Status: {status}. 
+     Risco: {nivel_risco}. Variância: {variancia}€. 
+     Sugira uma estratégia de mitigação rápida."
+    
+    This structure ensures AI:
+    - Understands business context (status, risk level)
+    - Makes numeric-aware decisions (can reason about variance)
+    - Produces actionable recommendations (mitigation strategies)
+
+Workflow:
+    1. DATA ORGANIZATION: Create PMO portfolio dictionary
+    2. DATAFRAME CONVERSION: Transform to pandas for analysis
+    3. PROMPT GENERATION: Create AI-ready prompts for each project
+    4. VISUALIZATION: Color-code and chart the portfolio
+    5. DISPLAY: Save and show results
+    6. TERMINAL OUTPUT: Print table for quick review
+
+Dictionary Keys Explained:
+    - Projeto: Human-readable project name
+    - Status: Current lifecycle state (Atrasado, Em Dia, Concluído)
+    - Variancia_EUR: Budget variance in euros (negative = over budget)
+    - Risco_Nivel: Risk assessment (Crítico, Médio, Baixo, Nulo)
+
+Dependencies:
+    - matplotlib: Figure creation, bar charts, styling
+    - pandas: DataFrame conversion, apply() for prompt generation
+    - os: File path handling
+
+Color Coding Strategy:
+    - Green (#2ecc71): Positive variance (under budget, "Concluído")
+    - Red (#e74c3c): Negative variance (over budget, "Atrasado")
+    - Zero-line: Black dashed reference for break-even
+
+Prompt Columns Explained:
+    The 'Prompt_IA' column contains structured input for future Gemini API:
+    - Contains all relevant context for AI analysis
+    - Formatted as natural language question (not structured JSON)
+    - Ready to be sent via genai.models.generate_content()
+    - Designed for "long form" text responses with recommendations
+
+Examples:
+    Run integrated PMO system:
+    
+    >>> exec(open('PMO Visualizer (V2.1).py').read())
+    🚀 Processamento de Portfólio AI-Ops...
+    
+    --- TABELA DE OPERAÇÕES (PREPARADA PARA IA) ---
+                 Projeto      Status  Variancia_EUR
+    0  Automação Risk-AI     Atrasado          -4500
+    1    Migração Cloud      Em Dia          1200
+    ...
+    
+    --- EXEMPLO DE PROMPT GERADO (LINHA 1) ---
+    Analise o projeto Automação Risk-AI. Status: Atrasado. 
+    Risco: Crítico. Variância: -4500€. 
+    Sugira uma estratégia de mitigação rápida.
+    
+    ✅ Gráfico guardado com sucesso: .../pmo_report_final_week2.png
+    📊 Tentando abrir janela de visualização...
+
+Error Handling and Fallback:
+    Try-except block gracefully handles display failures:
+    - PNG always saved first (guaranteed deliverable)
+    - If window display fails, users still have report file
+    - Warning message informs of partial failure (file saved, display didn't work)
+
+Data Validation:
+    - Assumes numeric variance values (EUR)
+    - Dictionary keys must match expected field names
+    - Project names are unique identifiers
+
+Roadmap:
+    V2.2: Add professional styling (themes, fonts)
+    V2.3: Multi-dashboard layouts for different stakeholder groups
+    V3: Live Gemini API integration (replace comment placeholder)
+    V3.1: Prompt caching to reduce API costs
+    V4: Automated daily report generation and email distribution
+    V5: Slack/Teams integration for daily portfolio status pushes
+
+Production Considerations:
+    - For large portfolios (>50 projects): Consider pagination
+    - API Integration: Set GOOGLE_API_KEY in .env file
+    - Rate Limiting: Implement exponential backoff for retry logic
+    - Cost Control: Use prompt caching to avoid duplicate API calls
+    - Data Freshness: Set scheduled execution frequency (daily, weekly)
+
+Related Modules:
+    - Scripts/Analysis/Data_Auditor.py: Health detection patterns
+    - Scripts/Analysis/PMO AI Architecture (V1.5).py: Prompt engineering
+    - Scripts/Setup/: Report formatting and email delivery
+    - Scripts/Utils/: Chart generation helpers
 """
 
 import matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-matplotlib.use("TkAgg")
+from typing import Optional, Dict, List, Any
 
 
-def gerar_sistema_pmo():
+def gerar_sistema_pmo() -> None:
     print("🚀 Processamento de Portfólio AI-Ops...")
 
     # 1. ESTRUTURA DE DICIONÁRIO (O que pediste para organizar)

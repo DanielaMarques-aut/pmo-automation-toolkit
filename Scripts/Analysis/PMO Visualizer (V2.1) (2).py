@@ -1,21 +1,134 @@
-"""
-PMO INTEGRATED SYSTEM (V2.0)
-----------------------------
-Este código consolida:
-1. Estrutura de Dados em Dicionário (Eficiência)
-2. Lógica de Prompt Engineering (IA Ready)
-3. Visualização de Saúde de Portfólio (Storytelling)
+"""PMO Integrated System with Professional Formatting: Portfolio Dashboard (V2.1-Enhanced).
+
+This module represents an enhanced iteration of V2.1 with additional visual
+styling and professional formatting capabilities. Extends chart aesthetics
+with font configuration, improved readability, and professional business presentation.
+
+Primary Purpose:
+    Create polished, publication-ready PMO portfolio dashboards with enhanced
+    visual styling. Apply professional font families, sizing, and spacing
+    conventions to ensure reports meet corporate communication standards.
+    Suitable for board presentations, investor communications, and executive
+    stakeholder reviews.
+
+Key Enhancements over V2.1:
+    - Matplotlib Configuration: Set global font family and size
+    - Professional Aesthetics: Arial font (corporate standard)
+    - Improved Readability: Larger base font size (12pt)
+    - Consistent Styling: All text elements use configured styles
+    - Print-Ready: Optimized for PDF export and printed documents
+
+Visual Style Configuration:
+    Font Family: Arial (widely available, professional appearance)
+    Font Size: 12pt (readable on slides and printed documents)
+    Figure Size: 10×6 inches (16:9 aspect ratio for widescreen)
+    DPI: 300 (print quality when saved as PNG)
+
+Styling Pattern (rcParams):
+    matplotlib.rcParams["font.family"] = "Arial"
+    matplotlib.rcParams["font.size"] = 12
+    
+    This pattern applies globally to all text elements in subsequent figures,
+    ensuring consistency without specifying font in each element.
+
+Workflow (Same as V2.1 plus Styling):
+    1. MATPLOTLIB CONFIG: Set font family and size globally
+    2. DATA ORGANIZATION: Portfolio dictionary structure
+    3. DATAFRAME CONVERSION: Pandas transformation
+    4. PROMPT GENERATION: AI-ready prompt formatting
+    5. VISUALIZATION: Bar chart with conditional colors
+    6. PROFESSIONAL STYLING: Apply corporate formatting
+    7. OUTPUT: Save and display
+
+Financial Health Categories:
+    - Green (on track): Positive variance, "Concluído", "Em Dia"
+    - Red (at risk): Negative variance, "Atrasado"  
+    - Legend identifies data series clearly
+
+Dependencies:
+    - matplotlib: Figure creation, rcParams configuration
+    - pandas: Data transformation and analysis
+    - os: File path operations
+
+Font Configuration Benefits:
+    - CONSISTENCY: All text uses same family (professional appearance)
+    - READABILITY: 12pt base size suitable for presentations
+    - UNIVERSAL: Arial is installed on Windows, Mac, Linux
+    - CORPORATE: Matches Microsoft Office defaults (for stakeholder alignment)
+    - SCALABILITY: Font size adjusts proportionally for different figure sizes
+
+Examples:
+    Generate professionally formatted portfolio dashboard:
+    
+    >>> exec(open('PMO Visualizer (V2.1) (2).py').read())
+    🚀 Processamento de Portfólio AI-Ops...
+    
+    # Visual output:
+    # - Bar chart with professional Arial font
+    # - Larger, clearer text than V2.1
+    # - Color-coded variance indicators
+    # - Zero-line reference
+    # - Grid background for easier reading
+    
+    ✅ Gráfico guardado com sucesso
+    📊 Tentando abrir janela de visualização...
+    
+    --- TABELA DE OPERAÇÕES (PREPARADA PARA IA) ---
+    Projeto           Status      Variancia_EUR
+    Automação...      Atrasado           -4500
+    Migração...         Em Dia            1200
+
+Presentation Scenarios:
+    - Executive Steering Committee: Professional appearance essential
+    - Investor Relations: Print-quality required (300 DPI + clear fonts)
+    - Board Meetings: Large screens (needs readable text)
+    - Annual Reports: Corporate color scheme consistency
+    - Printed Documents: Must survive B&W photocopying
+
+Print Configuration (Optional Enhancements):
+    For higher-quality PDF export, consider:
+    plt.savefig(filename, dpi=300, bbox_inches='tight')
+    # This creates print-ready output suitable for annual reports
+
+Roadmap:
+    V2.2: Add corporate color palette (brand guidelines)
+    V2.3: Support multiple chart layouts (dashboard grids)
+    V2.4: Theme system (light mode, dark mode for presentations)
+    V3: Integration with corporate design system (logo, watermarks)
+    V4: Automated PDF generation with headers/footers
+    V5: Export to PowerPoint with professional templates
+
+Related Styling Resources:
+    - Matplotlib style sheets: seaborn, ggplot, fivethirtyeight
+    - Corporate font guidelines: Check company brand standards
+    - Color palette standards: Match corporate identity colors
+    - Layout guidelines: 16:9 (widescreen) vs 4:3 (legacy)
+
+Compatibility Notes:
+    - Font families available: Check plt.rcParams['font.sans-serif']
+    - Fallback font: If Arial unavailable, uses next in sans-serif list
+    - Print rendering: Some PDF readers require font embedding
+    - Web display: Different from print (test in target format)
+
+Best Practices:
+    1. Always test output in target medium (screen, print, PDF)
+    2. Use consistent font across all company dashboards
+    3. Consider accessibility (font size for vision impairment)
+    4. Test color blindness mode (red-green must have other distinction)
+    5. Save multiple formats (PNG for web, PDF for print)
 """
 
 import matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from typing import Optional, Dict, List, Any
+
 matplotlib.use("TkAgg")
 
-plt.rcParams["font.family"] = "Arial"      # fontfamily mais legível
-plt.rcParams["font.size"] = 12             # tamanho de fonte mais confortável
-def gerar_sistema_pmo():
+plt.rcParams["font.family"] = "Arial"
+plt.rcParams["font.size"] = 12
+def gerar_sistema_pmo() -> None:
     print("🚀 Processamento de Portfólio AI-Ops...")
 
     # 1. ESTRUTURA DE DICIONÁRIO (O que pediste para organizar)

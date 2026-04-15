@@ -1,35 +1,57 @@
+"""Slack Notification and Alert System for PMO Reporting
+
+Provides comprehensive integration with Slack for sending PMO reports, alerts, and metrics.
+Includes functions for:
+- Slack API configuration and validation
+- Report generation with custom layouts and metrics
+- Webhook-based message sending
+- File uploads to Slack channels
+- Structured message blocks for professional reporting
+
+All notifications are logged with timestamps for audit purposes.
+"""
+
 import requests
 import os
 import logging
+from typing import Optional, Dict, List, Union, Any
 from dotenv import load_dotenv
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
-from typing import Optional, Dict, Union
 
-
-# Configuração de Logs profissional: essencial para monitorizar o que acontece em produção
+# Configure professional logging for production monitoring
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-CONFIG_RELATORIOS = {
+# Report configuration templates with emoji and styling
+CONFIG_RELATORIOS: Dict[str, Dict[str, str]] = {
     "diario": {"emoji": "📅", "titulo": "Status Diário de Ops", "cor": "primary"},
     "semanal": {"emoji": "📊", "titulo": "Relatório Semanal PMO", "cor": "primary"},
     "urgente": {"emoji": "🚨", "titulo": "ALERTA CRÍTICO: Risco Elevado", "cor": "danger"}
 }
+
+
 def obter_configuracoes_slack() -> Dict[str, Optional[str]]:
     """
-    Extrai variáveis de configuração do Slack do arquivo .env e valida sua existência.
+    Load and validate Slack API configuration from environment variables.
 
-    Carrega as variáveis de ambiente necessárias para a integração com o Slack,
-    incluindo webhook URL, token de API e ID do canal.
+    Loads configuration from .env file including webhook URL, API token, and channel ID.
+    Validates that all required variables are present and logs missing configurations.
 
     Returns:
-        dict: Dicionário contendo as configurações do Slack com as chaves:
-            - 'webhook_url': URL do webhook do Slack
-            - 'token': Token de API do Slack
-            - 'canal_id': ID do canal do Slack
+        Dict[str, Optional[str]]: Configuration dictionary with keys:
+            - 'webhook_url': Slack incoming webhook URL for message posting
+            - 'token': Slack API token for WebClient authentication
+            - 'canal_id': Default Slack channel ID for file uploads
 
-    Raises:
-        Nenhum erro é levantado diretamente, mas logs de erro são gerados se o .env não for encontrado.
+    Note:
+        - Logs error if .env file is not found
+        - Logs error for each missing environment variable
+        - Returns a dict even if some values are None (caller must validate)
+
+    Example:
+        >>> config = obter_configuracoes_slack()
+        >>> if config['token']:
+        ...     client = configurar_cliente_slack(config['token'])
     """
     if not load_dotenv():
         logging.error("ERRO: Ficheiro .env não encontrado na pasta atual.")
@@ -44,81 +66,162 @@ def obter_configuracoes_slack() -> Dict[str, Optional[str]]:
             logging.error(f"❌ Variável de ambiente para '{chave}' não definida!")
     return config
 
-def configurar_cliente_slack(token: str)-> WebClient:
+
+def configurar_cliente_slack(token: str) -> WebClient:
     """
-    Configura e retorna uma instância do cliente WebClient para a API do Slack.
+    Configure and return Slack API WebClient instance with authentication.
+
+    Creates a WebClient instance using the provided authentication token.
+    Validates token before instantiation.
 
     Args:
-        token (str): Token de autenticação da API do Slack.
+        token: Slack API authentication token (Bot User OAuth Token).
+               Must be a valid token starting with 'xoxb-' or 'xoxp-'.
 
     Returns:
-        WebClient: Instância configurada do cliente Slack.
+        WebClient: Configured Slack WebClient instance ready for API calls.
 
     Raises:
-        ValueError: Se o token não for fornecido ou estiver vazio.
+        ValueError: If token is empty, None, or not provided.
+        Exception: If WebClient instantiation fails (invalid format, auth error).
+
+    Example:
+        >>> client = configurar_cliente_slack('xoxb-your-token-here')
+        >>> response = client.chat_postMessage(channel='#general', text='Hello')
     """
     if not token:
         raise ValueError("Token do Slack não configurado")
     try:
-        # Retorna a instância tipada
         return WebClient(token)
     except Exception as e:
         logging.error(f"🔥 Erro ao instanciar o WebClient: {str(e)}")
         raise
 
 
-def test_api_configuration()-> None:
+def test_api_configuration() -> None:
     """
-    Testa a configuração da API do Slack verificando se as variáveis necessárias estão definidas.
+    Test Slack API configuration by validating environment variables.
 
-    Carrega as configurações do Slack e verifica cada variável crítica,
-    logando o status de configuração ou alertando sobre valores ausentes.
-    Útil para depuração e validação antes de usar a API.
+    Loads Slack configuration and checks each required variable. Logs status
+    of each configuration item, showing first 5 characters of secrets for safety.
+    Useful for debugging and pre-flight validation before using the API.
 
     Returns:
-        None: Esta função não retorna valores, apenas loga informações.
+        None: Only logs information about configuration status.
+
+    Note:
+        - Does not raise exceptions (for safe use in tests)
+        - Shows truncated tokens/URLs for security (first 5 chars only)
+        - Logs both success and missing items to help with troubleshooting
     """
     logging.info("🔍 A testar a configuração da API do Slack...")
-    cfg:Dict[str, Optional[str]] = obter_configuracoes_slack()
+    cfg: Dict[str, Optional[str]] = obter_configuracoes_slack()
 
     for chave in ["webhook_url", "token", "canal_id"]:
-        valor:Optional[str] = cfg[chave]
+        valor: Optional[str] = cfg[chave]
         if valor:
             logging.info(f"{chave}: Configurado (Primeiros 5 caracteres: {valor[:5]}...)")
         else:
             logging.error(f"{chave}: NÃO CONFIGURADO. Verifica .env")
 
 
-# --- BASES: ESTRUTURAS DE DADOS ---
-# Usamos dicionários (dict) e listas (list) para representar o JSON do Slack.
-def criar_bloco_cabecalho(tipo: str) -> dict:
-    conf = CONFIG_RELATORIOS.get(tipo, CONFIG_RELATORIOS["diario"])
+# Helper functions for Slack block construction
+def criar_bloco_cabecalho(tipo: str) -> Dict[str, Any]:
+    """
+    Create a Slack header block with emoji and title based on report type.
+
+    Builds a header block using the Slack Block Kit format, selecting emoji and title
+    from CONFIG_RELATORIOS based on the provided type. Falls back to 'diario' if type
+    not found.
+
+    Args:
+        tipo: Report type key ('diario', 'semanal', or 'urgente').
+              Unknown types default to 'diario' configuration.
+
+    Returns:
+        Dict[str, Any]: Slack header block dictionary ready for inclusion in blocks array.
+                       Format: {"type": "header", "text": {...}}
+
+    Example:
+        >>> block = criar_bloco_cabecalho('urgente')
+        >>> block['text']['text']
+        '🚨 ALERTA CRÍTICO: Risco Elevado'
+    """
+    conf: Dict[str, str] = CONFIG_RELATORIOS.get(tipo, CONFIG_RELATORIOS["diario"])
     return {
         "type": "header",
         "text": {"type": "plain_text", "text": f"{conf['emoji']} {conf['titulo']}"}
     }
-def criar_bloco_campos(dados_campos: dict) -> dict:
-    # Transforma um dicionário de dados numa lista de campos mrkdwn
-    fields = []
+
+
+def criar_bloco_campos(dados_campos: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Create Slack section block with key-value fields from provided data.
+
+    Transforms a dictionary of data into a Slack section block with formatted fields.
+    Automatically handles numeric values with percentage formatting (one decimal place).
+
+    Args:
+        dados_campos: Dictionary mapping field names (keys) to field values.
+                     Values can be numbers (formatted as %) or strings (shown as-is).
+                     Example: {'Taxa de Risco': 45.6, 'Status': 'Normal'}
+
+    Returns:
+        Dict[str, Any]: Slack section block with mrkdwn formatted fields.
+                       Format: {"type": "section", "fields": [...]}
+
+    Note:
+        - Numeric values are formatted with one decimal place and '%' suffix
+        - String values are displayed as-is
+        - Strings are bolded (mrkdwn *text* syntax)
+
+    Example:
+        >>> data = {'Taxa de Risco': 35.4, 'Projetos': 'Em Progresso'}
+        >>> block = criar_bloco_campos(data)
+        >>> block['fields'][0]['text']
+        '*Taxa de Risco:*\n35.4%'
+    """
+    fields: List[Dict[str, str]] = []
     for k, v in dados_campos.items():
-        # Check if the value is a number before applying float formatting
+        # Format numbers with percentage; keep other types as strings
         if isinstance(v, (int, float)):
-            val_str = f"{v:.1f}%"
+            val_str: str = f"{v:.1f}%"
         else:
             val_str = str(v)
-            
+
         fields.append({
             "type": "mrkdwn",
             "text": f"*{k}:*\n{val_str}"
         })
-    
+
     return {"type": "section", "fields": fields}
 
-def gerar_report_pmo(tipo_relatorio: str, metricas: dict) -> list:
+
+def gerar_report_pmo(tipo_relatorio: str, metricas: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
-    ENGINE: Constrói qualquer relatório baseado no tipo e nos dados fornecidos.
+    Generate complete PMO report layout with header, metrics, and footer.
+
+    Combines header block, divider, metrics fields, and footer context into a complete
+    report layout ready for Slack messaging. Supports multiple report types with
+    appropriate styling.
+
+    Args:
+        tipo_relatorio: Type of report ('diario', 'semanal', 'urgente').
+                       Determines header emoji, title, and styling.
+        metricas: Dictionary of metric names (keys) and values to display.
+                 Example: {'Taxa de Risco': 42.5, 'Projetos Ativos': 15}
+
+    Returns:
+        List[Dict[str, Any]]: Array of Slack blocks ready for message sending.
+                             Includes header, divider, metrics section, and footer.
+
+    Example:
+        >>> metrics = {'Taxa de Risco': 35.0, 'Conclusão': 65.0}
+        >>> layout = gerar_report_pmo('urgente', metrics)
+        >>> len(layout)
+        4  # header, divider, section, context
     """
-    layout = [
+    layout: List[Dict[str, Any]] = [
         criar_bloco_cabecalho(tipo_relatorio),
         {"type": "divider"},
         criar_bloco_campos(metricas),
@@ -127,33 +230,51 @@ def gerar_report_pmo(tipo_relatorio: str, metricas: dict) -> list:
             "elements": [{"type": "mrkdwn", "text": "📍 Gerado via AI-Ops Engine v5.0"}]
         }
     ]
-    
-    return layout
-def construir_payload_visual(pmo_msg: str, url_doc: str) -> Dict[str, list[Dict[str,any]]]:
-    """
-    Constrói um payload visual estruturado para mensagens do Slack usando blocos.
 
-    Cria uma mensagem formatada com cabeçalho, corpo de texto e botão de ação,
-    seguindo as melhores práticas de design do Slack para notificações visuais.
+    return layout
+
+
+def construir_payload_visual(pmo_msg: str, url_doc: str) -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Build structured Slack payload with message, action button, and professional styling.
+
+    Creates a complete message payload with header, message body, and call-to-action button.
+    Follows Slack Block Kit best practices for professional notification design.
 
     Args:
-        pmo_msg (str): Mensagem principal a ser exibida no corpo da notificação.
-        url_doc (str): URL do documento (ex.: link para o relatório Excel) para o botão.
+        pmo_msg: Main message text to display in the notification body.
+                Should be concise and actionable (max 300 chars recommended).
+        url_doc: URL for the action button (e.g., link to Excel report or dashboard).
+                Must be a valid HTTP/HTTPS URL.
 
     Returns:
-        dict: Payload estruturado em formato de blocos do Slack, pronto para envio.
+        Dict[str, List[Dict[str, Any]]]: Complete Slack payload with blocks array.
+                                        Ready to send via webhook or client.send() method.
+
+    Note:
+        - Header is fixed: "📊 Relatório de Operações PMO"
+        - Button text: "📁 Ver no Excel"
+        - Button style: primary (blue)
+        - Message text is bolded for emphasis
+
+    Example:
+        >>> payload = construir_payload_visual(
+        ...     'Novo alerta de risco detectado',
+        ...     'https://example.com/report.xlsx'
+        ... )
+        >>> # payload ready to send to Slack webhook
     """
-    cabecalho:Dict[str, any]={
+    cabecalho: Dict[str, Any] = {
         "type": "header",
         "text": {"type": "plain_text", "text": "📊 Relatório de Operações PMO"}
     }
 
-    corpo = {
+    corpo: Dict[str, Any] = {
         "type": "section",
         "text": {"type": "mrkdwn", "text": f"*{pmo_msg}*"}
     }
 
-    acoes = {
+    acoes: Dict[str, Any] = {
         "type": "actions",
         "elements": [
             {
@@ -166,10 +287,26 @@ def construir_payload_visual(pmo_msg: str, url_doc: str) -> Dict[str, list[Dict[
     }
 
     return {"blocks": [cabecalho, corpo, acoes]}
-def gerar_layout_slack(status_emoji, taxa_risco, total_projetos):
+
+
+def gerar_layout_slack(status_emoji: str, taxa_risco: float, total_projetos: float) -> List[Dict[str, Any]]:
     """
-    CLEAN CODE: Data-to-UI Mapping.
-    Constrói a estrutura de blocos (Nested Dictionaries) para a API do Slack.
+    Generate portfolio health status layout for Slack display.
+
+    Creates a formatted Slack block layout showing portfolio health metrics with
+    risk percentage and project count. Uses data-to-UI mapping for clean separation.
+
+    Args:
+        status_emoji: Emoji to display in header (e.g., '😟', '😐', '😊').
+        taxa_risco: Risk percentage (0-100). Usually from portfolio health calculation.
+        total_projetos: Number or percentage of active projects.
+
+    Returns:
+        List[Dict[str, Any]]: Array of Slack blocks with header, divider, metrics, and footer.
+
+    Example:
+        >>> layout = gerar_layout_slack('😟', 45.3, 12.0)
+        >>> # layout shows: "😟 Relatório de Saúde...", divider, metrics, footer
     """
     return [
         {
@@ -196,38 +333,53 @@ def gerar_layout_slack(status_emoji, taxa_risco, total_projetos):
     ]
 
 
-def enviar_alerta_slack(mensagem,layout):
+def enviar_alerta_slack(mensagem: Union[str, Dict[str, Any]], layout: Optional[List[Dict[str, Any]]] = None) -> None:
     """
-    Envia uma mensagem de alerta para o Slack via webhook.
+    Send alert message to Slack via webhook with optional structured blocks.
 
-    Suporta tanto mensagens de texto simples quanto payloads estruturados em blocos.
-    Valida a configuração do webhook antes do envio e trata erros de API.
+    Posts a message to Slack using the configured webhook URL. Supports both
+    simple text messages and complex structured payloads with Slack blocks.
 
     Args:
-        mensagem (str or dict): Conteúdo da mensagem. Pode ser uma string de texto
-            simples ou um dicionário com payload estruturado (ex.: blocos do Slack).
+        mensagem: Message content. Can be:
+                 - String: Simple text message
+                 - Dict: Structured payload (for complex designs)
+        layout: Optional list of Slack blocks for structured formatting.
+               If provided, creates payload with both text fallback and blocks.
 
     Returns:
-        None: Esta função não retorna valores, apenas envia a notificação.
+        None: Sends message as side effect. Logs success or failure.
 
     Raises:
-        ValueError: Se a URL do webhook não estiver configurada.
-        requests.exceptions.RequestException: Para erros de rede ou HTTP.
+        ValueError: If webhook URL is not configured (.env missing).
+        requests.exceptions.RequestException: Network/HTTP errors during POST.
+
+    Note:
+        - Logs all responses (success or failure) for audit trail
+        - Webhook URL must be configured in .env as 'url_slack'
+        - Status code 200 indicates success; warnings logged for other codes
+        - All exceptions are logged but not re-raised (fail-safe behavior)
+
+    Example:
+        >>> layout = gerar_report_pmo('urgente', {'Risco': 95.0})
+        >>> enviar_alerta_slack('Alerta Crítico!', layout)
     """
-    cfg = obter_configuracoes_slack()
-    webhook_url = cfg["webhook_url"]
+    cfg: Dict[str, Optional[str]] = obter_configuracoes_slack()
+    webhook_url: Optional[str] = cfg["webhook_url"]
 
     if not webhook_url:
         logging.error("URL do Slack não encontrada no ficheiro .env")
         raise ValueError("URL do Slack não configurada")
+
     if layout:
-        payload= {"text": mensagem,"blocks":layout}
+        payload: Dict[str, Any] = {"text": mensagem, "blocks": layout}
     elif isinstance(mensagem, dict):
-        payload = mensagem 
-           
-   
+        payload = mensagem
+    else:
+        payload = {"text": mensagem}
+
     try:
-        response = requests.post(webhook_url, json=payload)
+        response: requests.Response = requests.post(webhook_url, json=payload)
         if response.status_code == 200:
             logging.info("✅ Notificação enviada para o Slack com sucesso!")
         else:

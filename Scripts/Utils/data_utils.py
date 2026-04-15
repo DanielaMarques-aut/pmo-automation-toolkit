@@ -1,22 +1,27 @@
-# data_utils.py
-# Data loading, validation, and processing utilities
+"""Data Loading, Validation, and Processing Utilities
+
+Provides functions for loading, validating, and processing PMO data from CSV files
+and JSON memory stores. Includes memory persistence to avoid duplicate notifications
+and data quality checks.
+"""
 
 import json
 import logging
+from typing import Optional, Dict
 import pandas as pd
 from pathlib import Path
 from config import ARQUIVO_MEMORIA
 
-def carregar_memoria():
+def carregar_memoria() -> Dict[str, any]:
     """
-    Load the memory dictionary from the JSON file.
+    Load the memory dictionary from JSON file with previously notified alerts.
 
-    This function reads the alerts memory file to retrieve previously notified risks.
-    If the file doesn't exist, it returns an empty dictionary.
+    Reads the alerts memory file to retrieve previously notified risks and avoid
+    duplicate notifications. Returns an empty dictionary if the file doesn't exist.
 
     Returns:
-        dict: A dictionary containing previously notified tasks as keys and their status as values.
-              Returns an empty dict if the file doesn't exist.
+        Dict[str, any]: Dictionary containing previously notified tasks as keys and 
+                        their notification status as values. Empty dict if file missing.
 
     Raises:
         json.JSONDecodeError: If the JSON file is corrupted or invalid.
@@ -27,14 +32,19 @@ def carregar_memoria():
             return json.load(f)
     return {}
 
-def salvar_memoria(memoria):
+def salvar_memoria(memoria: Dict[str, any]) -> None:
     """
-    Save the memory dictionary to the JSON file.
+    Save the memory dictionary to JSON file for persistence.
 
-    This function persists the current state of notified risks to avoid duplicate notifications.
+    Persists the current state of notified risks to avoid duplicate notifications
+    in future runs.
 
     Args:
-        memoria (dict): A dictionary containing task names as keys and their notification status as values.
+        memoria: Dictionary containing task names as keys and their notification 
+                 status as values.
+
+    Returns:
+        None: Writes data to disk with side effects.
 
     Raises:
         IOError: If there's an issue writing to the file.
@@ -43,32 +53,32 @@ def salvar_memoria(memoria):
     with open(ARQUIVO_MEMORIA, 'w') as f:
         json.dump(memoria, f, indent=4)
 
-def carregar_e_validar_dados(caminho):
+def carregar_e_validar_dados(caminho: str) -> Optional[pd.DataFrame]:
     """
-    Load and validate CSV data from the specified file path.
+    Load and validate CSV data with automatic delimiter detection.
 
-    This function reads a CSV file, sanitizes column names, and validates that required
-    columns are present. It uses pandas with automatic delimiter detection.
+    Reads a CSV file, sanitizes column names (strips whitespace), and validates
+    that required columns are present. Uses pandas with automatic delimiter detection.
 
     Args:
-        caminho (str): The file path to the CSV file to be loaded.
+        caminho: Absolute or relative path to the CSV file to load.
 
     Returns:
-        pandas.DataFrame or None: The loaded and validated DataFrame if successful,
-        None if loading or validation fails.
+        Optional[pd.DataFrame]: DataFrame with validated data if successful, 
+                                None if loading or validation fails.
 
     Raises:
         FileNotFoundError: If the specified CSV file does not exist.
-        pandas.errors.EmptyDataError: If the CSV file is empty.
+        pd.errors.EmptyDataError: If the CSV file is empty.
         UnicodeDecodeError: If there's an encoding issue with the file.
     """
     try:
         logging.info(f"🔍 A ler ficheiro: {caminho}")
-        df = pd.read_csv(caminho, sep=None, engine='python', encoding='utf-8-sig')
+        df: pd.DataFrame = pd.read_csv(caminho, sep=None, engine='python', encoding='utf-8-sig')
         # Sanitize column names
         df.columns = df.columns.str.strip()
         # Validate required columns
-        colunas_obrigatorias = ["Status", "Tarefa"]
+        colunas_obrigatorias: list[str] = ["Status", "Tarefa"]
         if not all(col in df.columns for col in colunas_obrigatorias):
             logging.error(f"❌ Erro de Schema: Colunas {colunas_obrigatorias} não encontradas.")
             return None
@@ -77,28 +87,29 @@ def carregar_e_validar_dados(caminho):
         logging.error(f"💥 Falha ao carregar CSV: {e}")
         return None
 
-def normalizar_status(df):
+def normalizar_status(df: pd.DataFrame) -> None:
     """
-    Normalize the 'Status' column and perform data quality checks on the DataFrame.
+    Normalize status column and perform data quality checks on DataFrame.
 
-    This function standardizes status values by stripping whitespace and capitalizing,
-    then checks for data inconsistencies and outliers that might indicate data quality issues.
+    Standardizes status values by stripping whitespace and capitalizing, then checks
+    for data inconsistencies and outliers that might indicate data quality issues.
 
     Args:
-        df (pandas.DataFrame): The DataFrame containing PMO data with 'Status' and 'Horas' columns.
+        df: DataFrame containing PMO data with 'Status' and 'Horas' columns.
+
+    Returns:
+        None: Modifies the input DataFrame in-place.
 
     Note:
-        This function modifies the input DataFrame in-place and logs warnings/errors
-        for detected issues. It does not return anything.
-
-    Warnings logged:
-        - Tasks marked as 'Concluído' with 0 or negative hours
-        - Tasks with more than 100 hours (potential outliers)
+        - Modifies df in-place without returning anything
+        - Logs warnings/errors for detected issues
+        - Checks for completed tasks with 0 or negative hours
+        - Detects outliers (tasks with > 100 hours)
     """
     # Normalize status
     df['Status'] = df['Status'].str.strip().str.capitalize()
     # Check for inconsistencies
-    inconsistentes = df[(df['Status'] == 'Concluído') & (df['Horas'] <= 0)]
+    inconsistentes: pd.DataFrame = df[(df['Status'] == 'Concluído') & (df['Horas'] <= 0)]
     if not inconsistentes.empty:
         logging.warning(f"⚠️ Alerta de QA: {len(inconsistentes)} tarefas concluídas com 0 horas.")
     

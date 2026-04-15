@@ -1,3 +1,57 @@
+"""
+Friday Weekly Close-out Report Generator: Production Pipeline Module (V1.1).
+
+This advanced version of the Friday reporting system adds comprehensive logging,
+error handling, and data validation. It demonstrates production-grade patterns:
+environment isolation, fail-fast validation, and structured error recovery.
+
+Primary Purpose:
+    Generate end-of-week PMO reports with enterprise-grade reliability.
+    Implement logging for audit trails and debugging. Validate data integrity
+    before processing. Handle missing files/credentials gracefully.
+
+Key Concepts:
+    - Environment Isolation: Load credentials from .env via dotenv
+    - Data Validation: Check required columns exist before processing
+    - Atomic Operations: mkdir with parents=True, exist_ok=True
+    - Logging Strategy: File + console handlers with UTF-8 encoding
+    - Error Recovery: Fail-fast on validation, continue on retryable errors
+
+Workflow:
+    1. ENVIRONMENT: Load .env for email credentials
+    2. SETUP: Create output directory if missing (mkdir pattern)
+    3. LOGGING: Configure dual-stream logging (file + console)
+    4. VALIDATION: Check data structure before processing
+    5. CLEAN: Convert hour formats, handle type mismatches
+    6. AGGREGATE: Group by department, sum hours
+    7. EXPORT: Save to Excel in output directory
+    8. EMAIL: Send report with error logging on failures
+
+Production Patterns:
+    - Pathlib: Cross-platform path handling via Path() objects
+    - Logging: Named loggers for module identification
+    - Environment: Credential isolation via .env (no hardcoded passwords)
+    - Validation: Explicit column checking before operations
+    - Error Handling: Try/except with logging for debugging
+
+Component Functions:
+    - validate_data(): Check DataFrame structure before processing
+    - run_weekly_closeout(): Main orchestration with error recovery
+    - send_pmo_email(): Email dispatch with credential handling
+
+Dependencies:
+    - pandas: DataFrame operations, aggregation, Excel export
+    - smtplib: SMTP_SSL connection for Gmail
+    - logging: Structured logging with file + console handlers
+    - pathlib: Cross-platform path operations
+    - dotenv: Environment variable loading from .env
+    - email.message: EmailMessage construction
+
+Author: PMO Production Team | Date: 2026-04-15 | Version: 1.1
+Schedule: Runs every Friday 17:00 with full audit logging
+
+"""
+
 import pandas as pd
 import smtplib
 import logging
@@ -5,6 +59,7 @@ import os
 from pathlib import Path
 from email.message import EmailMessage
 from dotenv import load_dotenv
+from typing import Optional, Dict, Any, Tuple
 
 # 1. SETUP & CONFIGURATION
 load_dotenv() # Loads your email/password from the .env file

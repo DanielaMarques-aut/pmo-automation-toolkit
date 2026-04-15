@@ -9,9 +9,10 @@ having named loggers helps you identify exactly which part of the engine generat
 Benefit: Instead of messy prints, we have a history of what the AI did.
 """
 import logging
-from matplotlib import pyplot as plt
 from datetime import datetime
 from pathlib import Path
+import sys
+
 import os
 import time
 import pandas as pd
@@ -19,6 +20,8 @@ import google.genai as genai
 from dotenv import load_dotenv
 from google.api_core import exceptions
 from typing import Dict, Any, Optional ,List
+sys.path.insert(0, str(Path(__file__).parent.parent / "Utils"))
+import bar_graph_file as bg
 
 log_dir = "logs"
 # Cria pasta de logs se não existir
@@ -27,7 +30,7 @@ if not os.path.exists(log_dir):
 logging.basicConfig(level= logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
         # Add encoding='utf-8' here to handle the emojis
         logging.FileHandler(os.path.join(log_dir, "pmo_audit.log"), encoding='utf-8'),
-        logging.StreamHandler()
+        logging.StreamHandler(Encoding='utf-8')
     ]
 )
 log=logging.getLogger("PMO_Engine")
@@ -45,10 +48,29 @@ if not api_key:
 client: genai.Client = genai.Client(api_key=api_key)
 model: str = "gemini-flash-latest"
 
-def get_ai_insight(summary_text: str, retries: int = 3):
+def get_ai_insight(summary_text: str, retries: int = 3) -> str:
     """
-    CLEAN CODE PRINCIPLE: Resilience Pattern (Retry Logic)
-    Esta função lida com o erro 503 (Server Busy) que encontrámos.
+    Query Gemini AI for strategic PMO recommendations with retry logic.
+    
+    Implements exponential backoff to handle temporary 503 server errors.
+    Contacts the AI with structured project data and receives strategic
+    recommendations focused on budget risk and resource allocation.
+    
+    Args:
+        summary_text: Structured summary of project data to analyze.
+                      Should include department summary and overdue project counts.
+        retries: Maximum number of retry attempts for server errors.
+                 Default is 3. Waits 2s, 4s, 6s between attempts.
+    
+    Returns:
+        str: AI recommendation in two sentences focused on budget risk and
+             resource allocation. Returns fallback message if all retries fail.
+    
+    Example:
+        >>> data = "Dept Summary: {'IT': 66500}. Overdue Projects: 3."
+        >>> insight = get_ai_insight(data)
+        >>> print(insight[:50])
+        'To mitigate significant operational risk...'
     """
     prompt = f"""
     Act as operations Director. Analyse this project summary and 
@@ -69,46 +91,39 @@ def get_ai_insight(summary_text: str, retries: int = 3):
             log.error(f"Error in IA analysis: {e}")
     return "IA unavailable at the moment."
 
-def create_department_summary_chart(dept_summary: Dict[str, float], output_file: str = 'dept_summary_chart.png') -> None:
-    """
-    Gera um gráfico de barras ordenado a partir de um sumário de departamentos.
-    
-    Princípios de Clean Code aplicados:
-    - Semantic Type Hinting: Uso de Dict[str, float] para clareza de manutenção.
-    - Snake_case: Variáveis e funções com nomes descritivos (ex: dept_summary).
-    - Fail-Fast logic: Idealmente, validaríamos se o dicionário está vazio antes de processar.
-    """
-    
-    # Ordenação dos dados: Essencial para uma leitura rápida de Ops/PMO
-    # Transformamos o dicionário numa lista de tuplos ordenada pelo valor (item[1])
-    sorted_items = sorted(dept_summary.items(), key=lambda item: item[1])
-    departments = [item[0] for item in sorted_items]
-    values = [item[1] for item in sorted_items]
 
-    # Substituição do .figure() por subplots para maior controlo (Standard Profissional)
-    fig, ax = plt.subplots(figsize=(10, 6))
+def main() -> None:
+    """
+    Execute the complete PMO audit engine workflow.
     
-    # Gráfico de barras horizontais (barh) facilita a leitura de nomes de departamentos longos
-    bars = ax.barh(departments, values, color='#2c3e50')
+    Orchestrates the entire pipeline: data ingestion → cleaning → analysis →
+    AI insights → visualization → report generation. All steps are logged
+    with timestamps and emoji indicators for easy monitoring.
     
-    # Customização técnica para Business Ops
-    ax.set_title('Distribuição de Carga Operacional por Departamento', fontsize=14, fontweight='bold')
-    ax.set_xlabel('Volume de Tarefas / Budget', fontsize=12)
-    ax.set_ylabel('Departamento', fontsize=12)
+    The engine performs:
+    1. CSV data loading and validation
+    2. Data cleaning (type conversion, whitespace removal)
+    3. Department budget aggregation
+    4. Budget distribution visualization
+    5. Overdue project detection
+    6. AI-powered strategic recommendations
+    7. Executive report generation and filing
     
-    # Adiciona etiquetas de dados para evitar ambiguidade
-    ax.bar_label(bars, padding=3)
+    Returns:
+        None
     
-    # Previne o corte de labels (labels truncation)
-    plt.tight_layout()
+    Raises:
+        SystemExit: If GOOGLE_API_KEY environment variable is not set.
     
-    # Guardar o ficheiro (Sem usar plt.show() para evitar interrupções no workflow)
-    plt.savefig(f"Data/output/{output_file}")
-    log.info(f"Relatório visual gerado com sucesso: {output_file}")
-    plt.show()  # Opcional: Mostrar o gráfico para validação visual
-
-def main():
-    # --- CLEAN CODE: FAIL-FAST INGESTION ---
+    Logs:
+        INFO/WARNING/ERROR messages to both console and pmo_audit.log with
+        timestamps and emoji indicators for visual clarity.
+    
+    Output Files:
+        - Data/output/budget_distribution.png: Bar chart of budget by dept
+        - Data/output/audit_report_YYYY-MM-DD_HH-MM.txt: Executive summary
+        - logs/pmo_audit.log: Complete execution history with timestamps
+    """
     file_path: str = "Data/Raw/projects.csv"
     report_dir: str = "Data/output"
 
@@ -131,7 +146,8 @@ def main():
         # Agregação por Departamento (Lição de Quinta-feira)
         # O GroupBy reduz a complexidade para a IA ler melhor.
         dept_summary: Dict[str, float] = df.groupby('Department')['Budget'].sum().to_dict()
-        create_department_summary_chart(dept_summary)
+        bg.generate_budget_chart(dept_summary, f"{report_dir}/budget_distribution.png")
+        log.info(f"Relatório visual gerado com sucesso! Check {report_dir}/budget_distribution.png")
 
         # Auditoria de Atrasos
         today: pd.Timestamp = pd.to_datetime('today')

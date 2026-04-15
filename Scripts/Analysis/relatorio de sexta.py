@@ -1,8 +1,58 @@
+"""
+Friday Weekly Close-out Report Generator Module.
+
+This module automates the end-of-week reporting cycle: data aggregation,
+summary report generation, and email distribution. It combines data cleaning
+(Monday's logic), aggregation (Tuesday's logic), and email integration for
+Friday stakeholder communication.
+
+Primary Purpose:
+    Generate weekly PMO reports summarizing departmental hours worked and
+    export to Excel for email distribution. Automates routine Friday reporting
+    to ensure consistent, timely stakeholder updates.
+
+Key Concepts:
+    - Pipeline Orchestration: Combine Monday→Tuesday→Friday logic
+    - Data Flow: Load → Clean → Aggregate → Format → Email
+    - Reusable Patterns: Hour cleaning (strip 'h' suffix, numeric coercion)
+    - Email Integration: Automatic Excel attachment handling
+    - Error Recovery: Graceful handling of missing credentials/files
+
+Workflow:
+    1. DATA SETUP: Create department hours DataFrame (simulated or real)
+    2. CLEAN: Remove 'h' suffix, convert to numeric via pd.to_numeric()
+    3. AGGREGATE: Group by Dept, sum hours across all entries
+    4. SUMMARIZE: Calculate total hours and format report text
+    5. EXPORT: Save summary to Excel (PMO_Report.xlsx)
+    6. EMAIL: Send report with Excel attachment to stakeholders
+
+Component Functions:
+    - run_weekly_closeout(): Orchestrates entire data processing pipeline
+    - enviar_alerta_pmo(): Email dispatch with Excel file attachment
+
+Email Attachment Pattern:
+    - Binary read mode ('rb') for Excel files
+    - MIME type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    - Adds attachment to EmailMessage object
+
+Dependencies:
+    - pandas: DataFrame operations, groupby, Excel export
+    - smtplib: Gmail SMTP connection via SMTP_SSL
+    - email.message: EmailMessage for structured email construction
+    - os: File path operations
+
+Author: PMO Reporting Team | Date: 2026-04-15
+Schedule: Runs every Friday 17:00 for stakeholder distribution
+
+"""
+
 import pandas as pd
 import smtplib
 from email.message import EmailMessage
 import os
-def run_weekly_closeout():
+from typing import Optional, Dict, Any, List
+
+def run_weekly_closeout() -> Optional[str]:
         print("🎯 Starting Friday Close-out...")
 
     # 1. LOAD & CLEAN (Monday's Logic)

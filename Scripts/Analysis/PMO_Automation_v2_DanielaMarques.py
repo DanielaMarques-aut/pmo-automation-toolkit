@@ -1,11 +1,46 @@
-# PROJECT: Automated PMO Risk & Budget Tracker (V1)
-# GOAL: Automate Financial Variance and Project Health Monitoring
-# AUTHOR: Daniela Marques | DATE: Monday, March 2nd, 2026
+"""PMO Automated Risk & Budget Tracker: Financial Variance and Project Health Monitoring (V2).
+
+This module automates financial variance reporting and project health assessment
+across project portfolios. Designed for daily portfolio reviews and stakeholder
+status communications.
+
+Primary Purpose:
+    Monitor project portfolio financial health through automated variance
+    analysis. Generate daily executive summaries identifying over/under budget
+    projects requiring management intervention.
+
+Key Concepts:
+    - Automated Health Scoring: Transfer variance into actionable status
+    - Financial Analysis: Budget allocation vs actual spend comparison
+    - Risk Categorization: Projects stratified by risk level
+    - Executive Communication: Clear status indicators for quick triage
+
+Workflow:
+    1. DATA INGESTION: Load project portfolio data
+    2. VARIANCE CALCULATION: Budget vs spend comparison
+    3. HEALTH CLASSIFICATION: Status assignment based on variance
+    4. PORTFOLIO SUMMARY: Executive report generation
+    5. CRITICAL ALERTS: Over-budget project escalation
+    6. AI ROADMAP: Document enhancement path
+
+Financial Health Status:
+    🟢 ON TRACK: Positive variance (under budget)
+    🔴 OVER BUDGET: Negative variance (exceeds allocation)
+
+Dependencies:
+    - pandas: Portfolio data management
+    - datetime: Timestamp reporting
+
+Related Modules:
+    - PMO_Automation_V1_DanielaMarques.py: Foundation version
+    - Data_Auditor.py: Health detection patterns
+"""
 
 import pandas as pd
 import datetime
+from typing import Optional, Dict, List, Any
 
-def run_pmo_automation_v1():
+def run_pmo_automation_v1() -> None:
     print(f"--- 🚀 PMO AUTOMATION V1: EXECUTION {datetime.datetime.now().strftime('%H:%M')} ---")
     
     # 1. DATA INGESTION (Simulando a base de dados )
