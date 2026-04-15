@@ -182,9 +182,15 @@ def run_full_analysis() -> None:
         
         # Import and run PMO Consolidated Engine
         from PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
+        from data_auditor_project_status_using_Groupby import main as data_auditor_main
+
+
         
         logger.info("📈 Executing PMO Consolidated Engine...")
         pmo_engine_main()
+        
+        logger.info("📈 Executing data auditor..")
+        data_auditor_main()
         
         logger.info("✅ Full analysis completed successfully")
         logger.info("="*70 + "\n")
