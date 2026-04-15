@@ -1,0 +1,19 @@
+2026-04-15 13:47:06,942 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 13:47:06,942 - PMO_Engine - INFO - Start Time: 2026-04-15 13:47:06
+2026-04-15 13:47:06,942 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 13:47:06,958 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 13:47:19,585 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 13:47:19,585 - PMO_Engine - INFO - ⚡ STARTING QUICK AUDIT
+2026-04-15 13:47:19,585 - PMO_Engine - INFO - ======================================================================
+2026-04-15 13:47:19,585 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 13:47:19,585 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 13:47:19,585 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 13:47:19,585 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 13:47:19,585 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 13:47:26,384 - PMO_Engine - INFO - 🔍 Running project health audit...
+2026-04-15 13:47:30,611 - PMO_Engine - INFO - ✅ Quick audit completed successfully
+2026-04-15 13:47:30,612 - PMO_Engine - INFO - ======================================================================
+
+2026-04-15 13:47:34,705 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 13:47:34,705 - PMO_Engine - INFO - End Time: 2026-04-15 13:47:34
