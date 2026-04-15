@@ -1,0 +1,42 @@
+2026-04-15 20:27:00,602 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 20:27:00,602 - PMO_Engine - INFO - Start Time: 2026-04-15 20:27:00
+2026-04-15 20:27:00,602 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 20:27:00,602 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 20:27:05,118 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 20:27:05,118 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-15 20:27:05,118 - PMO_Engine - INFO - ======================================================================
+2026-04-15 20:27:05,130 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 20:27:05,130 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 20:27:05,130 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 20:27:05,130 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 20:27:05,130 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 20:27:08,943 - PMO_Engine - ERROR - ❌ Error during full analysis: StreamHandler.__init__() got an unexpected keyword argument 'Encoding'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 186, in run_full_analysis
+    from PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
+  File "c:\Users\daniq\Carrer\Scripts\Analysis\PMO_Consolidated_Engine_v1_5.py", line 33, in <module>
+    logging.StreamHandler(Encoding='utf-8')
+TypeError: StreamHandler.__init__() got an unexpected keyword argument 'Encoding'
+2026-04-15 20:28:21,913 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 20:28:21,913 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-15 20:28:21,913 - PMO_Engine - INFO - ======================================================================
+2026-04-15 20:28:21,913 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 20:28:21,913 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 20:28:21,913 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 20:28:21,913 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 20:28:21,913 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 20:28:24,187 - PMO_Engine - ERROR - ❌ Failed to import PMO engine: No module named 'data_auditor_project_status_using_Groupby'
+2026-04-15 20:29:19,023 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 20:29:19,023 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-15 20:29:19,023 - PMO_Engine - INFO - ======================================================================
+2026-04-15 20:29:19,023 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 20:29:19,030 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 20:29:19,030 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 20:29:19,030 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 20:29:19,030 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 20:29:19,030 - PMO_Engine - ERROR - ❌ Failed to import PMO engine: No module named 'data_auditor_project_status_using_Groupby'
+2026-04-15 20:29:35,389 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 20:29:35,389 - PMO_Engine - INFO - End Time: 2026-04-15 20:29:35

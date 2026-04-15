@@ -31,9 +31,11 @@ Usage:
     Then select option from interactive menu:
     1. Run Full PMO Analysis
     2. Quick Project Audit
-    3. Generate Visualizations
-    4. View Recent Reports
-    5. Exit
+    3. Strategic Risk Mitigation (AI V1.5) ⭐ NEW
+    4. Department Alerts & Escalation (V1.1) ⭐ NEW 
+    5. Generate Visualizations
+    6. View Recent Reports
+    7. Exit
 
 Author: Daniela Marques
 Version: 1.0
@@ -182,7 +184,8 @@ def run_full_analysis() -> None:
         
         # Import and run PMO Consolidated Engine
         from PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
-        from data_auditor_project_status_using_Groupby import main as data_auditor_main
+        from Data_Auditor_project_status_using_Groupby import run_consolidated_audit as data_auditor_main
+        from Agregação_de_dados_V1 import run_analysis as run_analysis_main
 
 
         
@@ -190,8 +193,11 @@ def run_full_analysis() -> None:
         pmo_engine_main()
         
         logger.info("📈 Executing data auditor..")
-        data_auditor_main()
-        
+        data_auditor_main(Path.cwd() / "data" /"raw"/ "projects.csv")
+
+        logger.info("📈 Executing full analysis..")
+        run_analysis_main()
+
         logger.info("✅ Full analysis completed successfully")
         logger.info("="*70 + "\n")
         
@@ -231,7 +237,7 @@ def run_quick_audit() -> None:
         from Data_Auditor import audit_project_health
         
         logger.info("🔍 Running project health audit...")
-        audit_project_health(Path("Data/Raw/project_status.csv"))
+        audit_project_health(Path("Data/Raw/projects.csv"))
         
         logger.info("✅ Quick audit completed successfully")
         logger.info("="*70 + "\n")
@@ -271,7 +277,10 @@ def generate_visualizations() -> None:
         
         # Import and run PMO Visualizer (try multiple versions)
         try:
-            from PMO_Visualizer_v2_4 import main as visualizer_main
+            import pandas as pd
+            df= pd.read_csv(Path("Data/Raw/projects.csv"))
+            dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
+            from bar_graph_file import generate_budget_chart as visualizer_main
             logger.info("Using PMO Visualizer v2.4...")
         except ImportError:
             try:
@@ -283,7 +292,7 @@ def generate_visualizations() -> None:
         
         if visualizer_main:
             logger.info("📈 Creating visualization dashboards...")
-            visualizer_main()
+            visualizer_main(dept_summary,"Data/Output/budget_distribution.png") 
         else:
             logger.warning("⚠️ Visualizer module not available")
         
@@ -352,20 +361,42 @@ def view_recent_reports() -> None:
     
     logger.info("="*70 + "\n")
 
+def run_strategic_mitigation() -> None:
+    """
+    INTEGRATION GOAL: Connects PMO AI Architecture (V1.5).
+    Focus: Risk Mitigation Plans.
+    """
+    path = Path("Scripts/Analysis/PMO_AI_Architecture_V1_6.py")
+    if not path.exists():
+        logger.error(f"❌ Required script not found: {path}")
+        
+    logger.info("🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)")
+    try:
+        import pandas as pd
+        # Programming Base: Fail-fast check for specific AI script
+        from PMO_Consolidated_Engine_v1_5 import get_ai_insight  as run_mitigation
+        df= pd.read_csv(Path("Data/Raw/projects.csv"))
+        dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
+        run_mitigation(dept_summary)
+        logger.info("✅ Mitigation plan generated.")
+    except ImportError:
+        logger.error("❌ Script 'PMO AI Architecture (V1.5).py' not found in path.")
 
 def show_menu() -> str:
     """
-    Display interactive CLI menu and get user selection.
+    Display interactive CLI menu and get user selection.3
     
     Menu Options:
     1. Run Full PMO Analysis
     2. Quick Project Audit
-    3. Generate Visualizations
-    4. View Recent Reports
-    5. Exit
+    3. Strategic Risk Mitigation (AI V1.5) ⭐ NEW
+    4. Department Alerts (V1.1) ⭐ NEW
+    5. Generate Visualizations
+    6. View Recent Reports
+    7. Exit
     
     Returns:
-        str: User's selected option (1-5)
+        str: User's selected option (1-7)
     """
     print("\n" + "="*70)
     print("🏢 PMO AUTOMATION ENGINE - MAIN MENU")
@@ -375,21 +406,50 @@ def show_menu() -> str:
     print("      └─ Complete workflow: data validation → AI analysis → reports → notifications\n")
     print("  2️⃣  Quick Project Audit")
     print("      └─ Fast health check: overdue projects, budget variance, risks\n")
-    print("  3️⃣  Generate Visualizations")
+    print("  3️⃣  Strategic Risk Mitigation (AI V1.5) ⭐ NEW")
+    print("      └─ AI-generated mitigation plans based on project KPIs and risk profiles\n")
+    print("  4️⃣  Department Alerts (V1.1) ⭐ NEW")
+    print("      └─ Alert system for at-risk projects\n")
+    print("  5️⃣  Generate Visualizations")
     print("      └─ Create dashboards: budget charts, status overview, timelines\n")
-    print("  4️⃣  View Recent Reports")
+    print("  6️⃣  View Recent Reports")
     print("      └─ Browse generated files: audit reports, visualizations, logs\n")
-    print("  5️⃣  Exit")
+    print("  7️⃣  Exit")
     print("      └─ Close application\n")
     print("="*70)
     
     while True:
-        choice = input("🎯 Select option (1-5): ").strip()
-        if choice in ["1", "2", "3", "4", "5"]:
+        choice = input("🎯 Select option (1-7): ").strip()
+        if choice in ["1", "2", "3", "4", "5", "6", "7"]:
             return choice
-        print("❌ Invalid selection. Please enter 1-5.")
+        print("❌ Invalid selection. Please enter 1-7.")
 
-
+def Run_department_alerts() -> None:
+    """
+    INTEGRATION GOAL: Connects PMO AI Architecture (V1.5).
+    Focus: Department Alerts.
+    """
+    path = Path("Scripts/Analysis/PMO_AI_Architecture_V1_6.py")
+    if not path.exists():
+        logger.error(f"❌ Required script not found: {path}")
+        
+    logger.info("⚠️ STARTING DEPARTMENT ALERTS (V1.1)")
+    try:
+        import pandas as pd
+        import datetime
+        # Programming Base: Fail-fast check for specific AI script
+        from PMO_Consolidated_Engine_v1_5 import alert_overdue_projects as run_alerts
+        df= pd.read_csv(Path("Data/Raw/projects.csv"))
+        df['Deadline'] = pd.to_datetime(df['Deadline'])
+        today = datetime.datetime.now()
+        overdue_count: int = df[(df['Deadline'] < today) & (df['Status'] != 'Completed')].shape[0]
+        print(f"Total overdue projects: {overdue_count}")
+        run_alerts(overdue_count)
+        logger.info("✅ Department alerts generated.")
+    except ImportError as e:
+        logger.error(f"❌ Script 'PMO AI Architecture (V1.5).py' not found in path.Error: {e}")
+    except Exception as e:  
+        logger.error(f"❌ Error during department alerts: {e}", exc_info=True)
 # ============================================================================
 # MAIN ENTRY POINT
 # ============================================================================
@@ -401,9 +461,11 @@ def main() -> None:
     Orchestrates:
     1. Environment validation
     2. Interactive menu display
-    3. Workflow execution based on user selection
-    4. Error handling and logging
-    5. Application shutdown
+    3. Strategic risk mitigation (AI V1.5)
+    4. Department alerts (V1.1)
+    5. Visualization generation
+    6. Error handling and logging
+    7. Application shutdown
     
     Returns:
         None
@@ -426,10 +488,14 @@ def main() -> None:
             elif option == "2":
                 run_quick_audit()
             elif option == "3":
-                generate_visualizations()
+                run_strategic_mitigation()
             elif option == "4":
-                view_recent_reports()
+                Run_department_alerts()   
             elif option == "5":
+                generate_visualizations()
+            elif option == "6":
+                view_recent_reports()
+            elif option == "7":
                 logger.info("👋 Shutting down PMO Engine...")
                 logger.info(f"End Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                 print("\n✅ Thank you for using PMO Automation Engine!")

@@ -1,0 +1,8 @@
+2026-04-15 20:55:26,919 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 20:55:26,926 - PMO_Engine - INFO - Start Time: 2026-04-15 20:55:26
+2026-04-15 20:55:26,927 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 20:55:26,927 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 20:55:35,445 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-15 20:55:36,947 - PMO_Engine - ERROR - ❌ Script 'PMO AI Architecture (V1.5).py' not found in path.
+2026-04-15 20:57:17,080 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 20:57:17,080 - PMO_Engine - INFO - End Time: 2026-04-15 20:57:17

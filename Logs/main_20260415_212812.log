@@ -1,0 +1,28 @@
+2026-04-15 21:28:12,891 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 21:28:12,891 - PMO_Engine - INFO - Start Time: 2026-04-15 21:28:12
+2026-04-15 21:28:12,891 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 21:28:12,891 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 21:28:17,165 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 21:28:17,165 - PMO_Engine - INFO - 📊 GENERATING VISUALIZATIONS
+2026-04-15 21:28:17,165 - PMO_Engine - INFO - ======================================================================
+2026-04-15 21:28:17,165 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 21:28:17,165 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 21:28:17,165 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 21:28:17,165 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 21:28:17,165 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 21:28:19,125 - PMO_Engine - INFO - Using PMO Visualizer v2.4...
+2026-04-15 21:28:19,125 - PMO_Engine - INFO - 📈 Creating visualization dashboards...
+2026-04-15 21:28:23,126 - PMO_Engine - INFO - ✅ Visualization generation completed
+2026-04-15 21:28:23,128 - PMO_Engine - INFO - ======================================================================
+
+2026-04-15 21:28:27,001 - PMO_Engine - ERROR - ❌ Unexpected error: name 'department_alerts_escalation' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 464, in main
+    department_alerts_escalation()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'department_alerts_escalation' is not defined
+2026-04-15 21:28:36,971 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-15 21:28:37,047 - PMO_Engine - ERROR - ❌ Script 'PMO AI Architecture (V1.5).py' not found in path.
+2026-04-15 21:36:53,212 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 21:36:53,212 - PMO_Engine - INFO - End Time: 2026-04-15 21:36:53

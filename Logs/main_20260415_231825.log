@@ -1,0 +1,8 @@
+2026-04-15 23:18:25,698 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 23:18:25,698 - PMO_Engine - INFO - Start Time: 2026-04-15 23:18:25
+2026-04-15 23:18:25,698 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 23:18:25,698 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 23:18:27,361 - PMO_Engine - INFO - ⚠️ STARTING DEPARTMENT ALERTS (V1.1)
+2026-04-15 23:18:31,246 - PMO_Engine - ERROR - <class 'ImportError'>
+2026-04-15 23:19:14,490 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 23:19:14,490 - PMO_Engine - INFO - End Time: 2026-04-15 23:19:14

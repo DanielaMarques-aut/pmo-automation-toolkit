@@ -1,0 +1,21 @@
+2026-04-15 21:38:09,339 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 21:38:09,340 - PMO_Engine - INFO - Start Time: 2026-04-15 21:38:09
+2026-04-15 21:38:09,340 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 21:38:09,341 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 21:38:13,896 - PMO_Engine - ERROR - ❌ Unexpected error: name 'department_alerts_escalation' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 465, in main
+    department_alerts_escalation()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'department_alerts_escalation' is not defined
+2026-04-15 21:38:21,073 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-15 21:38:25,352 - PMO_Engine - ERROR - ❌ Unexpected error: name 'df' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 463, in main
+    run_strategic_mitigation()
+  File "c:\Users\daniq\Carrer\main.py", line 377, in run_strategic_mitigation
+    dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
+                   ^^
+NameError: name 'df' is not defined
+2026-04-15 21:39:22,316 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 21:39:22,319 - PMO_Engine - INFO - End Time: 2026-04-15 21:39:22

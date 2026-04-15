@@ -1,0 +1,39 @@
+2026-04-15 21:11:56,832 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 21:11:56,832 - PMO_Engine - INFO - Start Time: 2026-04-15 21:11:56
+2026-04-15 21:11:56,832 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 21:11:56,832 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 21:11:59,669 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 21:11:59,669 - PMO_Engine - INFO - 📊 GENERATING VISUALIZATIONS
+2026-04-15 21:11:59,669 - PMO_Engine - INFO - ======================================================================
+2026-04-15 21:11:59,670 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 21:11:59,670 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 21:11:59,681 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 21:11:59,681 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 21:11:59,681 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 21:12:00,801 - PMO_Engine - INFO - Using PMO Visualizer v2.4...
+2026-04-15 21:12:00,805 - PMO_Engine - INFO - 📈 Creating visualization dashboards...
+2026-04-15 21:12:00,805 - PMO_Engine - ERROR - ❌ Error during visualization: generate_budget_chart() missing 2 required positional arguments: 'data' and 'output_path'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 292, in generate_visualizations
+    visualizer_main()
+TypeError: generate_budget_chart() missing 2 required positional arguments: 'data' and 'output_path'
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - 📊 GENERATING VISUALIZATIONS
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - ======================================================================
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 21:14:49,292 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 21:14:49,292 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 21:14:49,292 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 21:14:49,292 - PMO_Engine - INFO - Using PMO Visualizer v2.4...
+2026-04-15 21:14:49,303 - PMO_Engine - INFO - 📈 Creating visualization dashboards...
+2026-04-15 21:14:49,303 - PMO_Engine - ERROR - ❌ Error during visualization: generate_budget_chart() missing 2 required positional arguments: 'data' and 'output_path'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 292, in generate_visualizations
+    visualizer_main("projects.csv","Data/Output/budget_distribution.png")
+    ^^^^^^^^^^^^^^^^^
+TypeError: generate_budget_chart() missing 2 required positional arguments: 'data' and 'output_path'
+2026-04-15 21:15:11,133 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 21:15:11,133 - PMO_Engine - INFO - End Time: 2026-04-15 21:15:11

@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate budget risk, we must immediately audit the IT and Product departments—which consume nearly 80% of the total budget—to identify why high spending is not preventing project overruns. I recommend reallocating a portion of these funds to address the critical underfunding in Security while shifting personnel to resolve the three overdue projects before they incur further financial penalties.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

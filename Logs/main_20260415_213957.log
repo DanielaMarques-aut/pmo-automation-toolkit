@@ -1,0 +1,16 @@
+2026-04-15 21:39:57,311 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 21:39:57,311 - PMO_Engine - INFO - Start Time: 2026-04-15 21:39:57
+2026-04-15 21:39:57,311 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 21:39:57,311 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 21:39:58,983 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-15 21:40:02,459 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-15 21:40:07,195 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-15 21:40:07,195 - PMO_Engine - INFO - ✅ Mitigation plan generated.
+2026-04-15 21:40:11,696 - PMO_Engine - ERROR - ❌ Unexpected error: name 'department_alerts_escalation' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 467, in main
+    department_alerts_escalation()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'department_alerts_escalation' is not defined
+2026-04-15 22:45:20,307 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 22:45:20,329 - PMO_Engine - INFO - End Time: 2026-04-15 22:45:20

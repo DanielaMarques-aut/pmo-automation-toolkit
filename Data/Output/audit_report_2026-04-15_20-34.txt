@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate financial exposure, we must immediately audit the IT and Product departments to identify why our highest-cost centers are failing to meet deadlines on three overdue projects. I recommend a strategic reallocation of underutilized funds to bolster our critically underfunded Security budget and provide the necessary surge capacity to clear the project backlog.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

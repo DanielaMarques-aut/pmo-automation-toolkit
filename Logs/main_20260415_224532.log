@@ -1,0 +1,8 @@
+2026-04-15 22:45:32,205 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 22:45:32,205 - PMO_Engine - INFO - Start Time: 2026-04-15 22:45:32
+2026-04-15 22:45:32,205 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 22:45:32,205 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 22:45:34,817 - PMO_Engine - INFO - ⚠️ STARTING DEPARTMENT ALERTS (V1.1)
+2026-04-15 22:45:36,342 - PMO_Engine - ERROR - ❌ Script 'PMO AI Architecture (V1.5).py' not found in path.
+2026-04-15 22:47:14,954 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 22:47:14,962 - PMO_Engine - INFO - End Time: 2026-04-15 22:47:14

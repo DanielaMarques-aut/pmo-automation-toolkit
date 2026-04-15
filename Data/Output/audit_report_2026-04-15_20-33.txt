@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: The high budget concentration in IT and Product combined with three overdue projects indicates a major operational bottleneck that risks devaluing our largest financial investments. I recommend a strategic reallocation of underutilized resources from Marketing and Data to support the IT delivery pipeline, ensuring we stabilize project timelines without further increasing the total burn rate.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

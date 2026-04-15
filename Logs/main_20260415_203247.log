@@ -1,0 +1,76 @@
+2026-04-15 20:32:47,124 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 20:32:47,127 - PMO_Engine - INFO - Start Time: 2026-04-15 20:32:47
+2026-04-15 20:32:47,127 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 20:32:47,127 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 20:32:49,276 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 20:32:49,276 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-15 20:32:49,276 - PMO_Engine - INFO - ======================================================================
+2026-04-15 20:32:49,283 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 20:32:49,283 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 20:32:49,283 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 20:32:49,290 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 20:32:49,290 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 20:33:02,723 - PMO_Engine - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-15 20:33:07,579 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-15 20:33:07,595 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-15 20:33:07,595 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-15 20:33:13,713 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-15 20:33:13,736 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-15_20-33.txt
+2026-04-15 20:33:13,738 - PMO_Engine - INFO - 
+==================================================
+2026-04-15 20:33:13,738 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-15 20:33:13,738 - PMO_Engine - INFO - ==================================================
+2026-04-15 20:33:13,740 - PMO_Engine - INFO - Insights from AI: The high budget concentration in IT and Product combined with three overdue projects indicates a major operational bottleneck that risks devaluing our largest financial investments. I recommend a strategic reallocation of underutilized resources from Marketing and Data to support the IT delivery pipeline, ensuring we stabilize project timelines without further increasing the total burn rate.
+2026-04-15 20:33:13,740 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-15 20:33:13,740 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - • Data: 18000€
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - • IT: 66500€
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - • Product: 45000€
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - • security: 5000€
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - ==================================================
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - ✅ Audit completed in 20.4s.
+2026-04-15 20:33:13,741 - PMO_Engine - INFO - 📈 Executing data auditor..
+2026-04-15 20:33:13,741 - PMO_Engine - ERROR - ❌ Error during full analysis: run_consolidated_audit() missing 1 required positional argument: 'csv_file'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 196, in run_full_analysis
+    data_auditor_main()
+TypeError: run_consolidated_audit() missing 1 required positional argument: 'csv_file'
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - ======================================================================
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 20:34:49,201 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 20:34:49,201 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 20:34:49,201 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 20:34:49,201 - PMO_Engine - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-15 20:34:52,211 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-15 20:34:52,215 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-15 20:34:52,218 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-15 20:34:57,330 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-15 20:34:57,341 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-15_20-34.txt
+2026-04-15 20:34:57,347 - PMO_Engine - INFO - 
+==================================================
+2026-04-15 20:34:57,349 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-15 20:34:57,349 - PMO_Engine - INFO - ==================================================
+2026-04-15 20:34:57,351 - PMO_Engine - INFO - Insights from AI: To mitigate financial exposure, we must immediately audit the IT and Product departments to identify why our highest-cost centers are failing to meet deadlines on three overdue projects. I recommend a strategic reallocation of underutilized funds to bolster our critically underfunded Security budget and provide the necessary surge capacity to clear the project backlog.
+2026-04-15 20:34:57,353 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-15 20:34:57,353 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-15 20:34:57,353 - PMO_Engine - INFO - • Data: 18000€
+2026-04-15 20:34:57,355 - PMO_Engine - INFO - • IT: 66500€
+2026-04-15 20:34:57,355 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-15 20:34:57,357 - PMO_Engine - INFO - • Product: 45000€
+2026-04-15 20:34:57,357 - PMO_Engine - INFO - • security: 5000€
+2026-04-15 20:34:57,358 - PMO_Engine - INFO - ==================================================
+2026-04-15 20:34:57,361 - PMO_Engine - INFO - ✅ Audit completed in 124.0s.
+2026-04-15 20:34:57,361 - PMO_Engine - INFO - 📈 Executing data auditor..
+2026-04-15 20:34:57,361 - PMO_Engine - ERROR - ❌ Error during full analysis: run_consolidated_audit() missing 1 required positional argument: 'csv_file'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 196, in run_full_analysis
+    data_auditor_main()
+TypeError: run_consolidated_audit() missing 1 required positional argument: 'csv_file'
+2026-04-15 20:35:17,704 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 20:35:17,720 - PMO_Engine - INFO - End Time: 2026-04-15 20:35:17

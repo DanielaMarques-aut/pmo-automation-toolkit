@@ -1,0 +1,20 @@
+2026-04-15 21:08:54,675 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 21:08:54,675 - PMO_Engine - INFO - Start Time: 2026-04-15 21:08:54
+2026-04-15 21:08:54,675 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 21:08:54,675 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 21:08:57,622 - PMO_Engine - INFO - 
+======================================================================
+2026-04-15 21:08:57,627 - PMO_Engine - INFO - 📊 GENERATING VISUALIZATIONS
+2026-04-15 21:08:57,627 - PMO_Engine - INFO - ======================================================================
+2026-04-15 21:08:57,630 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-15 21:08:57,637 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-15 21:08:57,637 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-15 21:08:57,637 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-15 21:08:57,637 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-15 21:08:58,667 - PMO_Engine - INFO - Using PMO Visualizer v2.4...
+2026-04-15 21:08:58,667 - PMO_Engine - INFO - 📈 Creating visualization dashboards...
+2026-04-15 21:08:58,700 - PMO_Engine - INFO - ✅ Visualization generation completed
+2026-04-15 21:08:58,700 - PMO_Engine - INFO - ======================================================================
+
+2026-04-15 21:11:53,596 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 21:11:53,596 - PMO_Engine - INFO - End Time: 2026-04-15 21:11:53

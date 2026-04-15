@@ -1,0 +1,8 @@
+2026-04-15 23:20:11,963 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-15 23:20:11,963 - PMO_Engine - INFO - Start Time: 2026-04-15 23:20:11
+2026-04-15 23:20:11,963 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-15 23:20:11,979 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-15 23:20:14,046 - PMO_Engine - INFO - ⚠️ STARTING DEPARTMENT ALERTS (V1.1)
+2026-04-15 23:20:17,807 - PMO_Engine - ERROR - cannot import name 'alert_overdue_projects' from 'PMO_Consolidated_Engine_v1_5' (c:\Users\daniq\Carrer\Scripts\Analysis\PMO_Consolidated_Engine_v1_5.py)
+2026-04-15 23:25:58,598 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-15 23:25:58,598 - PMO_Engine - INFO - End Time: 2026-04-15 23:25:58

@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: Given that IT and Product command nearly 80% of the budget yet account for three overdue projects, we must immediately audit these departments to resolve resource bottlenecks and prevent further capital leakage. We should strategically reallocate a portion of this technical funding to address the critical underfunding in Security, ensuring systemic risks are balanced while streamlining labor to clear the existing project backlog.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================
