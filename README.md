@@ -1,9 +1,9 @@
 # PMO Automation System
-
+🚀 PMO Automation Toolkit: The Master Orchestrator
 <<<<<<< HEAD
 > Automated portfolio monitoring, risk detection, and reporting for project management offices
-
-**Status:** Production Ready 🚀 | **Last Updated:** April 15, 2026 | **Version:** 1.5
+>Este toolkit evoluiu de scripts isolados para um Sistema Modular de AI-Ops. Através do main.py, coordeno múltiplos motores de análise que transformam dados de projetos em decisões estratégicas.
+> 
 =======
 📊 Business Impact (The ROI)
 
@@ -26,24 +26,12 @@ Human Error Reduction: 0% intervention needed for data ingestion pipelines.
 - pip package manager
 - Git (for version control)
 
-### Installation (5 minutes)
+### 🛠️ Installation & Usage
 
 ```bash
 # 1. Clone or navigate to project
+git clone "https://github.com/DanielaMarques-aut/pmo-automation-toolkit"
 cd Carrer
-=======
-Data Integrity/Architecture: Automated validation of Excel/CSV datasets using Pandas.
-Transitioned from Python Lists to Pandas DataFrames (Vectorization over manual loops).
-
-Risk Compliance: Scripted initialization and auditing of risk logs.
-AI Integration: Implementing Gemini SDK for automated executive summaries and risk reporting.
-
-
-Security First: Secure credential management via Environment Variables (python-dotenv).
-Zero-exposure policy using python-dotenv for all API credentials.
-
-Reliability: Built-in "Fail-Fast" ingestion and persistent connection handling for high-availability scripts.
->>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
 
 # 2. Create virtual environment
 python -m venv .venv
@@ -54,9 +42,33 @@ python -m venv .venv
 .venv\Scripts\activate
 # macOS/Linux:
 source .venv/bin/activate
+<<<<<<< HEAD
+#4. install dependencies
+pip install -r requirements.txt.
+<<<<<<< HEAD
+# 5. Configure environment
+cp .env.example .env
+# Edit .env with your API keys and credentials
+<<<<<<< HEAD
+# 6. Verify setup
+python Scripts/Setup/folder_setup.py
+<<<<<<< HEAD
+# 7. Run main automation
+main.py
+python Scripts/Analysis/PMO_Consolidated_Engine.py
+```
 =======
+=======
+Data Integrity/Architecture: Automated validation of Excel/CSV datasets using Pandas.
+Transitioned from Python Lists to Pandas DataFrames (Vectorization over manual loops).
 
-The "Baptism of Fire" Milestones (Week 7)
+Risk Compliance: Scripted initialization and auditing of risk logs.
+AI Integration: Implementing Gemini SDK for automated executive summaries and risk reporting.
+Security First: Secure credential management via Environment Variables (python-dotenv).
+Zero-exposure policy using python-dotenv for all API credentials.
+Reliability: Built-in "Fail-Fast" ingestion and persistent connection handling for high-availability scripts.
+
+The "Baptism of Fire" Milestones
 
 Audit Efficiency: Reduced manual audit time from 45 minutes to 10 seconds.
 
@@ -73,38 +85,31 @@ Semantic Type Hinting: Explicitly defining data types for future-proof maintenan
 Auto-Documentation: Descriptive snake_case naming (e.g., total_audit_tasks vs x).
 
 Fail-Fast Ingestion: Validating file existence and API keys before execution.
+The system validates the environment (validate_environment) and the existence of data sources before starting processing.
 
 Observability: Professional logging (.log) instead of volatile print() statements.
 
+Modularization & Namespaces: Implementation of __init__.py for professional import management and folder hierarchy.
+
+Vectorization: Replacing manual loops with column operations in Pandas DataFrames for ultra-fast performance.
 
 
 📁 Repository Structure
-Plaintext
+├── main.py              #conection of the most relevant scripts
+├── .env                 # Security: Protect API Keys and personal info via python-dotenv
 scripts/
   ├── organize_folders.py      # Standardizes PMO directory creation
   └── risk_auditor.py          # Validates and generates risk logs
+   ├── Analysis/        # Abalisis Cripts (Alerts, Audits, Groupby)
+    │   ├── AlertOverdue.py
+    │   ├── Data_Auditor.py
+    │   └── PMO_Consolidated_Engine.py
+    └── Utils/                 # Usefull scripts (Config, Logging)
 docs/                          # Process flows and technical documentation
 requirements.txt               # Pinning dependencies for replicability
 .gitignore                     # Ensuring clean and secure version control
-🛠️ Installation & Usage
-Clone & Setup:
->>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
 
-# 4. Install dependencies
-pip install -r Requirements.txt
 
-# 5. Configure environment
-cp .env.example .env
-# Edit .env with your API keys and credentials
-
-# 6. Verify setup
-python Scripts/Setup/folder_setup.py
-
-# 7. Run main automation
-python Scripts/Analysis/PMO_Consolidated_Engine.py
-```
-
----
 
 ## 🏗️ Architecture
 
@@ -400,7 +405,17 @@ For issues or questions:
 - Enterprise-grade error handling & logging
 
 ---
+🛠️ Funcionalidades do Orquestrador
 
+[FULL] Full PMO Analysis: Auditoria 360º com insights preditivos via Gemini SDK.
+
+[QUICK] Quick Project Audit: Diagnóstico de saúde instantâneo baseado em KPIs.
+
+[RISK] Strategic Risk Mitigation: Planos de mitigação em 3 passos gerados por IA.
+
+[ALERTS] Automated Health Alerts: Monitorização de atrasos via AlertOverdue module.
+
+[VIZ] Data Visualization: Dashboards automáticos para reporte executivo.
 ## 🎯 Roadmap
 
 ### Current (V1.5)
