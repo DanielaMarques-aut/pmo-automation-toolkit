@@ -1,13 +1,26 @@
 # PMO Automation System
 
+<<<<<<< HEAD
 > Automated portfolio monitoring, risk detection, and reporting for project management offices
 
 **Status:** Production Ready 🚀 | **Last Updated:** April 15, 2026 | **Version:** 1.5
+=======
+📊 Business Impact (The ROI)
+
+Mental Shift: Transitioned from Reactive Management to Proactive Risk Analyst.
+
+Efficiency: Significant reduction in manual report formatting and data entry.
+Weekly Writing Saved: ~3 hours through automated risk reporting.
+
+Accuracy: 90% mitigation of human error through programmatic data validation.
+Human Error Reduction: 0% intervention needed for data ingestion pipelines.
+>>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
 
 ---
 
 ## 📋 Quick Start
 
+<<<<<<< HEAD
 ### Prerequisites
 - Python 3.12+
 - pip package manager
@@ -18,15 +31,64 @@
 ```bash
 # 1. Clone or navigate to project
 cd Carrer
+=======
+Data Integrity/Architecture: Automated validation of Excel/CSV datasets using Pandas.
+Transitioned from Python Lists to Pandas DataFrames (Vectorization over manual loops).
+
+Risk Compliance: Scripted initialization and auditing of risk logs.
+AI Integration: Implementing Gemini SDK for automated executive summaries and risk reporting.
+
+
+Security First: Secure credential management via Environment Variables (python-dotenv).
+Zero-exposure policy using python-dotenv for all API credentials.
+
+Reliability: Built-in "Fail-Fast" ingestion and persistent connection handling for high-availability scripts.
+>>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
 
 # 2. Create virtual environment
 python -m venv .venv
 
+<<<<<<< HEAD
 # 3. Activate virtual environment
 # Windows:
 .venv\Scripts\activate
 # macOS/Linux:
 source .venv/bin/activate
+=======
+
+The "Baptism of Fire" Milestones (Week 7)
+
+Audit Efficiency: Reduced manual audit time from 45 minutes to 10 seconds.
+
+System Agnostic: Code optimized for hybrid Windows/Mac environments with explicit UTF-8 encoding.
+
+Git Mastery: Implementation of .gitignore and Git LFS for repository hygiene.
+
+🏗 Clean Code Principles (The Manifesto)
+
+I follow strict programming bases to ensure my code is a corporate asset:
+
+Semantic Type Hinting: Explicitly defining data types for future-proof maintenance.
+
+Auto-Documentation: Descriptive snake_case naming (e.g., total_audit_tasks vs x).
+
+Fail-Fast Ingestion: Validating file existence and API keys before execution.
+
+Observability: Professional logging (.log) instead of volatile print() statements.
+
+
+
+📁 Repository Structure
+Plaintext
+scripts/
+  ├── organize_folders.py      # Standardizes PMO directory creation
+  └── risk_auditor.py          # Validates and generates risk logs
+docs/                          # Process flows and technical documentation
+requirements.txt               # Pinning dependencies for replicability
+.gitignore                     # Ensuring clean and secure version control
+🛠️ Installation & Usage
+Clone & Setup:
+>>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
 
 # 4. Install dependencies
 pip install -r Requirements.txt
@@ -68,6 +130,7 @@ python Scripts/Analysis/PMO_Consolidated_Engine.py
 └─────────────────────────────────────────┘
 ```
 
+<<<<<<< HEAD
 ### Key Components
 
 | Layer | Purpose | Key Files |
@@ -357,3 +420,12 @@ For issues or questions:
 ---
 
 **Happy automating!** 🚀
+=======
+🔗 Connect with me
+
+LinkedIn: Daniela Marques
+
+Location: Nazaré, Portugal 🇵🇹
+
+Developed by Daniela Marques Business Operations Specialist | AI & Automation Enthusiast
+>>>>>>> 3e50b3a091a320ad909d6ae2b1397769f7cd7e55
