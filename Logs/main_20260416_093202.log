@@ -1,0 +1,40 @@
+2026-04-16 09:32:02,117 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-16 09:32:02,118 - PMO_Engine - INFO - Start Time: 2026-04-16 09:32:02
+2026-04-16 09:32:02,118 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-16 09:32:02,118 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-16 09:32:08,229 - PMO_Engine - INFO - 
+======================================================================
+2026-04-16 09:32:08,229 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-16 09:32:08,229 - PMO_Engine - INFO - ======================================================================
+2026-04-16 09:32:08,229 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-16 09:32:08,236 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-16 09:32:08,236 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-16 09:32:08,245 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-16 09:32:08,249 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-16 09:33:02,609 - PMO_Engine - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-16 09:33:07,156 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-16 09:33:07,166 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-16 09:33:07,166 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-16 09:33:28,507 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-16_09-33.txt
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - 
+==================================================
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - ==================================================
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - Insights from AI: To mitigate financial risk stemming from high IT and Product concentration, we must immediately reallocate technical personnel to resolve the three overdue projects and stabilize our delivery timeline. Furthermore, we should audit the current spend to address the critically low security budget, ensuring our high-capital investments are not compromised by operational vulnerabilities.
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - • Data: 18000€
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - • IT: 66500€
+2026-04-16 09:33:28,528 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-16 09:33:28,531 - PMO_Engine - INFO - • Product: 45000€
+2026-04-16 09:33:28,531 - PMO_Engine - INFO - • security: 5000€
+2026-04-16 09:33:28,531 - PMO_Engine - INFO - ==================================================
+2026-04-16 09:33:28,531 - PMO_Engine - INFO - ✅ Audit completed in 38.5s.
+2026-04-16 09:33:28,533 - PMO_Engine - INFO - 📈 Executing data auditor..
+2026-04-16 09:33:28,564 - PMO_Engine - INFO - 📈 Executing full analysis..
+2026-04-16 09:33:32,594 - PMO_Engine - INFO - ✅ Full analysis completed successfully
+2026-04-16 09:33:32,596 - PMO_Engine - INFO - ======================================================================
+
+2026-04-16 09:35:05,754 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-16 09:35:05,754 - PMO_Engine - INFO - End Time: 2026-04-16 09:35:05
