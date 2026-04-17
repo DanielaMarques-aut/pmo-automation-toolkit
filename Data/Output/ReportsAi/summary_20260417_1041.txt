@@ -1,0 +1,2 @@
+--- PMO EXECUTIVE REPORT | 2026-04-17 10:41:15.385809 ---
+AI-generated mitigation plan based on project KPIs and risk profiles.The heavy concentration of nearly 80% of resources in IT and Product creates a significant operational risk by leaving the security posture critically underfunded at less than 4% of the total budget. We must immediately reallocate a portion of the IT spend to strengthen security and data infrastructure to mitigate potential breach liabilities and ensure the long-term stability of the rollout.

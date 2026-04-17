@@ -378,9 +378,12 @@ def run_strategic_mitigation() -> None:
         df= pd.read_csv(Path("Data/Raw/projects.csv"))
         dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
         run_mitigation(dept_summary)
+        from Exporter import save_executive_summary as save_summary
+        content = f"AI-generated mitigation plan based on project KPIs and risk profiles.{run_mitigation(dept_summary)}"
+        save_summary(content)
         logger.info("✅ Mitigation plan generated.")
-    except ImportError:
-        logger.error("❌ Script 'PMO AI Architecture (V1.5).py' not found in path.")
+    except ImportError as e:
+        logger.error(f"❌ ImportError occurred: {e}")
 
 def show_menu() -> str:
     """

@@ -1,0 +1,12 @@
+2026-04-17 10:45:04,704 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-17 10:45:04,704 - PMO_Engine - INFO - Start Time: 2026-04-17 10:45:04
+2026-04-17 10:45:04,704 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-17 10:45:04,706 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-17 10:45:12,404 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-17 10:45:17,125 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-17 10:45:21,562 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-17 10:45:21,631 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-17 10:45:39,174 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-17 10:45:39,182 - PMO_Engine - INFO - ✅ Mitigation plan generated.
+2026-04-17 10:49:11,477 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-17 10:49:11,477 - PMO_Engine - INFO - End Time: 2026-04-17 10:49:11

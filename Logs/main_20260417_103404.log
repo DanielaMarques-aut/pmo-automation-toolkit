@@ -1,0 +1,13 @@
+2026-04-17 10:34:04,251 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-17 10:34:04,253 - PMO_Engine - INFO - Start Time: 2026-04-17 10:34:04
+2026-04-17 10:34:04,253 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-17 10:34:04,253 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-17 10:34:06,228 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-17 10:34:10,692 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-17 10:34:12,243 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-17 10:34:12,259 - PMO_Engine - ERROR - Error in IA analysis: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-04-17 10:34:12,259 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-17 10:34:16,554 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-17 10:34:16,574 - PMO_Engine - INFO - ✅ Mitigation plan generated.
+2026-04-17 10:36:15,422 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-17 10:36:15,430 - PMO_Engine - INFO - End Time: 2026-04-17 10:36:15

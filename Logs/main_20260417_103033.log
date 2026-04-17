@@ -1,0 +1,10 @@
+2026-04-17 10:30:33,934 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-17 10:30:33,934 - PMO_Engine - INFO - Start Time: 2026-04-17 10:30:33
+2026-04-17 10:30:33,934 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-17 10:30:33,936 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-17 10:30:39,657 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-17 10:31:03,086 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-17 10:31:19,502 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-17 10:31:19,515 - PMO_Engine - ERROR - ❌ Script 'PMO AI Architecture (V1.5).py' not found in path.
+2026-04-17 10:32:40,732 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-17 10:32:40,732 - PMO_Engine - INFO - End Time: 2026-04-17 10:32:40
