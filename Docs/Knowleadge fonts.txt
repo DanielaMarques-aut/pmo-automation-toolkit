@@ -4,3 +4,5 @@ Notebook 12 fator metodology: https://notebooklm.google.com/notebook/a312d46d-ad
 gemmini Learnning resources & routine: https://gemini.google.com/share/40063bcc1815
 Notebook about modules and imports:https://notebooklm.google.com/notebook/976f5e65-23d0-45cb-b763-79f89c7fec9c
 Logging info:https://notebooklm.google.com/notebook/c33480ee-3d5e-409e-9e4c-78394516a81f
+
+Review of core concepts:https://notebooklm.google.com/notebook/a24cafd9-4946-4d65-989f-abd7e166989a
