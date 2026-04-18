@@ -1,4 +1,4 @@
-logger.info("Initializing PMO Utils resource package...")
+print("Initializing PMO Utils resource package...")
 
 __version__ = "0.1.0"
 AUTHOR = "Daniela Marques"  

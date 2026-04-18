@@ -1,4 +1,4 @@
-logger.info("Initializing PMO Analysis Toolkit...")
+print("Initializing PMO Analysis Toolkit...")
 
 __version__ = "0.1.0"
 AUTHOR = "Daniela Marques"

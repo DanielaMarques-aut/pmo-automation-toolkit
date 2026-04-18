@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: The concentration of nearly 80% of total spend within IT and Product alongside three overdue projects indicates significant financial exposure and systemic bottlenecks in our highest-cost centers. We must immediately reallocate project management oversight and technical resources from lower-spend departments to resolve these delays and prevent further capital burn on stagnant initiatives.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

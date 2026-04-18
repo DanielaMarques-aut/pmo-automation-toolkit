@@ -1,0 +1,74 @@
+2026-04-18 12:01:11,594 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 12:01:11,596 - PMO_Engine - INFO - Start Time: 2026-04-18 12:01:11
+2026-04-18 12:01:11,596 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 12:01:11,596 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 12:01:14,767 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 12:01:14,767 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-18 12:01:14,767 - PMO_Engine - INFO - ======================================================================
+2026-04-18 12:01:14,774 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 12:01:14,774 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 12:01:14,776 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 12:01:14,776 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 12:01:14,776 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-18 12:01:14,792 - PMO_Engine - ERROR - ❌ Error during full analysis: name 'logger' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 186, in run_full_analysis
+    from Scripts.Analysis.PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
+  File "c:\Users\daniq\Carrer\Scripts\__init__.py", line 2, in <module>
+    logger.info("Initializing PMO Analysis Toolkit...")
+    ^^^^^^
+NameError: name 'logger' is not defined
+2026-04-18 12:01:26,954 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 12:01:26,954 - PMO_Engine - INFO - ⚡ STARTING QUICK AUDIT
+2026-04-18 12:01:26,954 - PMO_Engine - INFO - ======================================================================
+2026-04-18 12:01:26,954 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 12:01:26,954 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 12:01:26,954 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 12:01:26,954 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 12:01:26,954 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-18 12:01:26,966 - PMO_Engine - ERROR - ❌ Error during quick audit: name 'logger' is not defined
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 237, in run_quick_audit
+    from Scripts.Analysis.Data_Auditor import audit_project_health
+  File "c:\Users\daniq\Carrer\Scripts\__init__.py", line 2, in <module>
+    logger.info("Initializing PMO Analysis Toolkit...")
+    ^^^^^^
+NameError: name 'logger' is not defined
+2026-04-18 12:03:01,428 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 12:03:01,428 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-18 12:03:01,428 - PMO_Engine - INFO - ======================================================================
+2026-04-18 12:03:01,428 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 12:03:01,428 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 12:03:01,428 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 12:03:01,428 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 12:03:01,428 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-18 12:03:18,461 - PMO_Engine - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-18 12:03:22,363 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-18 12:03:22,378 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-18 12:03:22,379 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-18 12:03:27,120 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-18_12-03.txt
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - 
+==================================================
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - ==================================================
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - Insights from AI: The concentration of nearly 80% of total spend within IT and Product alongside three overdue projects indicates significant financial exposure and systemic bottlenecks in our highest-cost centers. We must immediately reallocate project management oversight and technical resources from lower-spend departments to resolve these delays and prevent further capital burn on stagnant initiatives.
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - • Data: 18000€
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - • IT: 66500€
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - • Product: 45000€
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - • security: 5000€
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - ==================================================
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - ✅ Audit completed in 14.1s.
+2026-04-18 12:03:27,124 - PMO_Engine - INFO - 📈 Executing data auditor..
+2026-04-18 12:03:27,134 - PMO_Engine - INFO - 📈 Executing full analysis..
+2026-04-18 12:03:29,646 - PMO_Engine - INFO - ✅ Full analysis completed successfully
+2026-04-18 12:03:29,646 - PMO_Engine - INFO - ======================================================================
+
+2026-04-18 12:05:49,106 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-18 12:05:49,106 - PMO_Engine - INFO - End Time: 2026-04-18 12:05:49

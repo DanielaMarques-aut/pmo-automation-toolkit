@@ -144,5 +144,5 @@ def run_analysis() -> None:
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
-    plt.savefig("gasto_departamento.png")
+    plt.savefig("Data/Output/gasto_departamento.png")
 run_analysis()
