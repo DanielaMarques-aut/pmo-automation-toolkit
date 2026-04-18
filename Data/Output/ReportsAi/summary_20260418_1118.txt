@@ -1,0 +1,2 @@
+--- PMO EXECUTIVE REPORT | 2026-04-18 11:18:11.125395 ---
+AI-generated mitigation plan based on project KPIs and risk profiles.The overwhelming concentration of capital in IT and Product (78% of the total budget) creates significant technical delivery risk, compounded by a dangerously low 3.5% allocation for Security. We must rebalance resources to fortify our security posture and increase the marketing spend to ensure this heavy technical investment successfully translates into market adoption and ROI.

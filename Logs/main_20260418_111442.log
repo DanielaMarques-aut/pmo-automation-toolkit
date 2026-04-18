@@ -1,0 +1,21 @@
+2026-04-18 11:14:42,180 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 11:14:42,180 - PMO_Engine - INFO - Start Time: 2026-04-18 11:14:42
+2026-04-18 11:14:42,180 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 11:14:42,180 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 11:14:44,479 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 11:14:44,481 - PMO_Engine - INFO - ⚡ STARTING QUICK AUDIT
+2026-04-18 11:14:44,481 - PMO_Engine - INFO - ======================================================================
+2026-04-18 11:14:44,481 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 11:14:44,481 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 11:14:44,481 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 11:14:44,491 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 11:14:44,491 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-18 11:14:45,565 - PMO_Engine - INFO - 🔍 Running project health audit...
+2026-04-18 11:14:45,569 - PMO_Engine - INFO - ✅ Quick audit completed successfully
+2026-04-18 11:14:45,569 - PMO_Engine - INFO - ======================================================================
+
+2026-04-18 11:14:50,875 - PMO_Engine - INFO - 🛡️ STARTING STRATEGIC RISK MITIGATION (V1.5)
+2026-04-18 11:14:50,877 - PMO_Engine - ERROR - ❌ ImportError occurred: No module named 'PMO_Consolidated_Engine_v1_5'
+2026-04-18 11:17:49,826 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-18 11:17:49,826 - PMO_Engine - INFO - End Time: 2026-04-18 11:17:49

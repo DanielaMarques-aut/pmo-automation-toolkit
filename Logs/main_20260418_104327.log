@@ -1,0 +1,23 @@
+2026-04-18 10:43:27,632 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 10:43:27,632 - PMO_Engine - INFO - Start Time: 2026-04-18 10:43:27
+2026-04-18 10:43:27,632 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 10:43:27,632 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 10:43:32,798 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 10:43:32,799 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-18 10:43:32,799 - PMO_Engine - INFO - ======================================================================
+2026-04-18 10:43:32,807 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 10:43:32,808 - PMO_Engine - WARNING -   ⚠️ Missing: projects.csv
+2026-04-18 10:43:32,809 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 10:43:32,809 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 10:43:32,810 - PMO_Engine - ERROR - ❌ Error during full analysis: '<' not supported between instances of 'list' and 'int'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 182, in run_full_analysis
+    if not validate_data_sources():
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\daniq\Carrer\main.py", line 145, in validate_data_sources
+    if found_files < len(required_files):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'list' and 'int'
+2026-04-18 10:44:38,888 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-18 10:44:38,888 - PMO_Engine - INFO - End Time: 2026-04-18 10:44:38

@@ -49,10 +49,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional, List
 
-# Add Scripts directories to path for imports
-sys.path.insert(0, str(Path(__file__).parent / "Scripts" / "Analysis"))
-sys.path.insert(0, str(Path(__file__).parent / "Scripts" / "Utils"))
-sys.path.insert(0, str(Path(__file__).parent / "Scripts" / "Setup"))
+
 
 # Configure logging
 LOG_DIR = Path("Logs")
@@ -132,7 +129,7 @@ def validate_data_sources() -> bool:
         "project_status.csv",
         "dados_pmo_segunda.csv"
     ]
-    
+  
     found_files = []
     for file in required_files:
         file_path = data_dir / file
@@ -142,12 +139,15 @@ def validate_data_sources() -> bool:
         else:
             logger.warning(f"  ⚠️ Missing: {file}")
     
-    if not found_files:
+    if len(found_files) != len(required_files):
+        print(f"Found {len(found_files)} out of {len(required_files)} required files.")
+
         logger.error("❌ No data source files found in Data/Raw/")
         return False
     
     logger.info(f"✅ Data validation passed ({len(found_files)} sources found)")
     return True
+
 
 
 # ============================================================================
@@ -183,9 +183,9 @@ def run_full_analysis() -> None:
             return
         
         # Import and run PMO Consolidated Engine
-        from PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
-        from Data_Auditor_project_status_using_Groupby import run_consolidated_audit as data_auditor_main
-        from Agregação_de_dados_V1 import run_analysis as run_analysis_main
+        from Scripts.Analysis.PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
+        from Scripts.Analysis.Data_Auditor_project_status_using_Groupby import run_consolidated_audit as data_auditor_main
+        from Scripts.Analysis.Agregação_de_dados_V1 import run_analysis as run_analysis_main
 
 
         
@@ -234,7 +234,7 @@ def run_quick_audit() -> None:
             return
         
         # Import and run Data Auditor
-        from Data_Auditor import audit_project_health
+        from Scripts.Analysis.Data_Auditor import audit_project_health
         
         logger.info("🔍 Running project health audit...")
         audit_project_health(Path("Data/Raw/projects.csv"))
@@ -280,11 +280,11 @@ def generate_visualizations() -> None:
             import pandas as pd
             df= pd.read_csv(Path("Data/Raw/projects.csv"))
             dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
-            from bar_graph_file import generate_budget_chart as visualizer_main
+            from Scripts.Utils.bar_graph_file import generate_budget_chart as visualizer_main
             logger.info("Using PMO Visualizer v2.4...")
         except ImportError:
             try:
-                from PMO_Visualizer_v2_3 import main as visualizer_main
+                from Scripts.Utils.bar_graph_Department_sumary_funcion import create_department_summary_chart as visualizer_main
                 logger.info("Using PMO Visualizer v2.3...")
             except ImportError:
                 logger.warning("Latest visualizer versions not found, using fallback...")
@@ -374,11 +374,11 @@ def run_strategic_mitigation() -> None:
     try:
         import pandas as pd
         # Programming Base: Fail-fast check for specific AI script
-        from PMO_Consolidated_Engine_v1_5 import get_ai_insight  as run_mitigation
+        from Scripts.Analysis.PMO_Consolidated_Engine_v1_5 import get_ai_insight  as run_mitigation
         df= pd.read_csv(Path("Data/Raw/projects.csv"))
         dept_summary = df.groupby('Department')['Budget'].sum().to_dict()
         run_mitigation(dept_summary)
-        from Exporter import save_executive_summary as save_summary
+        from Scripts.Utils.Exporter import save_executive_summary as save_summary
         content = f"AI-generated mitigation plan based on project KPIs and risk profiles.{run_mitigation(dept_summary)}"
         save_summary(content)
         logger.info("✅ Mitigation plan generated.")
@@ -441,7 +441,7 @@ def Run_department_alerts() -> None:
         import pandas as pd
         import datetime
         # Programming Base: Fail-fast check for specific AI script
-        from PMO_Consolidated_Engine_v1_5 import alert_overdue_projects as run_alerts
+        from Scripts.Analysis.PMO_Consolidated_Engine_v1_5 import alert_overdue_projects as run_alerts
         df= pd.read_csv(Path("Data/Raw/projects.csv"))
         df['Deadline'] = pd.to_datetime(df['Deadline'])
         today = datetime.datetime.now()

@@ -1,0 +1,16 @@
+2026-04-18 11:07:30,091 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 11:07:30,091 - PMO_Engine - INFO - Start Time: 2026-04-18 11:07:30
+2026-04-18 11:07:30,091 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 11:07:30,091 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 11:07:33,899 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 11:07:33,899 - PMO_Engine - INFO - ⚡ STARTING QUICK AUDIT
+2026-04-18 11:07:33,899 - PMO_Engine - INFO - ======================================================================
+2026-04-18 11:07:33,918 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 11:07:33,918 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 11:07:33,918 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 11:07:33,923 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 11:07:33,923 - PMO_Engine - INFO - ✅ Data validation passed (3 sources found)
+2026-04-18 11:07:33,924 - PMO_Engine - ERROR - ❌ Failed to import Data Auditor: No module named 'Data_Auditor'
+2026-04-18 11:07:50,620 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-18 11:07:50,620 - PMO_Engine - INFO - End Time: 2026-04-18 11:07:50

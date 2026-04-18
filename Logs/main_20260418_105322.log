@@ -1,0 +1,16 @@
+2026-04-18 10:53:22,940 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 10:53:22,940 - PMO_Engine - INFO - Start Time: 2026-04-18 10:53:22
+2026-04-18 10:53:22,942 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 10:53:22,942 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 10:53:24,718 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 10:53:24,718 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-18 10:53:24,718 - PMO_Engine - INFO - ======================================================================
+2026-04-18 10:53:24,718 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 10:53:24,718 - PMO_Engine - INFO -   ✅ Found: projects.csv
+2026-04-18 10:53:24,718 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 10:53:24,733 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 10:53:24,733 - PMO_Engine - ERROR - ❌ No data source files found in Data/Raw/
+2026-04-18 10:53:24,736 - PMO_Engine - ERROR - Cannot proceed: data sources missing
+2026-04-18 10:55:11,169 - PMO_Engine - INFO - 👋 Shutting down PMO Engine...
+2026-04-18 10:55:11,180 - PMO_Engine - INFO - End Time: 2026-04-18 10:55:11

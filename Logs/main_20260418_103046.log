@@ -1,0 +1,17 @@
+2026-04-18 10:30:46,751 - PMO_Engine - INFO - 🚀 PMO AUTOMATION ENGINE STARTED
+2026-04-18 10:30:46,751 - PMO_Engine - INFO - Start Time: 2026-04-18 10:30:46
+2026-04-18 10:30:46,751 - PMO_Engine - INFO - 🔍 Validating environment...
+2026-04-18 10:30:46,753 - PMO_Engine - INFO - ✅ Environment validation passed
+2026-04-18 10:32:16,900 - PMO_Engine - INFO - 
+======================================================================
+2026-04-18 10:32:16,900 - PMO_Engine - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-18 10:32:16,900 - PMO_Engine - INFO - ======================================================================
+2026-04-18 10:32:16,900 - PMO_Engine - INFO - 📊 Checking data sources...
+2026-04-18 10:32:16,900 - PMO_Engine - WARNING -   ⚠️ Missing: projects.csv
+2026-04-18 10:32:16,910 - PMO_Engine - INFO -   ✅ Found: project_status.csv
+2026-04-18 10:32:16,910 - PMO_Engine - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-18 10:32:16,910 - PMO_Engine - INFO - ✅ Data validation passed (2 sources found)
+2026-04-18 10:33:02,850 - PMO_Engine - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-18 10:33:02,850 - PMO_Engine - ERROR - ❌ Error: The file Data/Raw/projects.csv does not exist.
+2026-04-18 10:33:02,850 - PMO_Engine - INFO - 📈 Executing data auditor..
+2026-04-18 10:33:02,857 - PMO_Engine - INFO - 📈 Executing full analysis..
