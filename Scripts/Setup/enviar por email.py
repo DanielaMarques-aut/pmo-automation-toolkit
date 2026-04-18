@@ -40,7 +40,8 @@ def enviar_alerta_pmo(
     corpo: str,
     nome_ficheiro: str
 ) -> bool:
-    """Send automated email alert with Excel attachment via Gmail SMTP.
+    """
+    Send automated email alert with Excel attachment via Gmail SMTP.
     
     Composes and sends email with file attachment using Gmail's SMTP server.
     Implements secure authentication with App Passwords and comprehensive error
@@ -90,7 +91,9 @@ def enviar_alerta_pmo(
         ... else:
         ...     print("Email failed - check logs")
     
-    \"\"\"\n    EMAIL_ADDRESS: str = "teu_email_aqui@gmail.com"
+    \"\"\"\n  
+    """
+    EMAIL_ADDRESS: str = "teu_email_aqui@gmail.com"
     EMAIL_PASSWORD: str = "tua-app-password"
 
     msg: EmailMessage = EmailMessage()
