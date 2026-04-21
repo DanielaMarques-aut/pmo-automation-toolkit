@@ -275,3 +275,32 @@
 2026-04-14 21:35:15,672 - INFO - • security: 5000€
 2026-04-14 21:35:15,672 - INFO - ==================================================
 2026-04-14 21:35:15,673 - INFO - ✅ Audit completed in 12.7s.
+2026-04-21 12:14:03,857 - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-21 12:14:06,551 - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-21 12:14:06,561 - INFO - 🤖 Generating AI insights...
+2026-04-21 12:14:06,562 - INFO - AFC is enabled with max remote calls: 10.
+2026-04-21 12:14:16,891 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-21 12:14:16,891 - INFO - ✅ Report saved to Data/output/audit_report_2026-04-21_12-14.txt
+2026-04-21 12:14:16,891 - INFO - 
+==================================================
+2026-04-21 12:14:16,891 - INFO - 📊 Executive Report
+2026-04-21 12:14:16,891 - INFO - ==================================================
+2026-04-21 12:14:16,891 - INFO - Insights from AI: The heavy financial concentration in IT and Product amidst three overdue projects indicates a critical risk of capital leakage and operational bottlenecks in our highest-cost centers. We must immediately pivot resources from new Product development to resolve the existing backlog while auditing the Security budget to ensure it scales appropriately with our IT infrastructure investments.
+2026-04-21 12:14:16,891 - INFO - --------------------------------------------------
+2026-04-21 12:14:16,891 - INFO - Budget Distribution by Department:
+2026-04-21 12:14:16,891 - INFO - • Data: 18000€
+2026-04-21 12:14:16,891 - INFO - • IT: 66500€
+2026-04-21 12:14:16,891 - INFO - • Marketing: 8200€
+2026-04-21 12:14:16,891 - INFO - • Product: 45000€
+2026-04-21 12:14:16,891 - INFO - • security: 5000€
+2026-04-21 12:14:16,907 - INFO - ==================================================
+2026-04-21 12:14:16,907 - INFO - ✅ Audit completed in 18.3s.
+2026-04-21 12:14:16,907 - INFO - 📈 Executing data auditor..
+2026-04-21 12:14:16,921 - INFO - 📈 Executing full analysis..
+2026-04-21 12:14:19,104 - INFO - ✅ Full analysis completed successfully
+2026-04-21 12:14:19,104 - INFO - ======================================================================
+
+2026-04-21 12:14:19,104 - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-21 12:14:22,827 - INFO - ✅ Latest logs displayed.
+2026-04-21 12:16:41,891 - INFO - 👋 Shutting down PMO Engine...
+2026-04-21 12:16:41,891 - INFO - End Time: 2026-04-21 12:16:41

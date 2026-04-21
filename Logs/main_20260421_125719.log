@@ -1,0 +1,40 @@
+2026-04-21 12:57:19,300 - root - INFO - Logging initialized. Session log: Logs\main_20260421_125719.log
+2026-04-21 12:57:19,300 - venv - INFO - 
+======================================================================
+2026-04-21 12:57:19,300 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-21 12:57:19,300 - venv - INFO - ======================================================================
+2026-04-21 12:57:19,300 - venv - INFO - 📊 Checking data sources...
+2026-04-21 12:57:19,300 - venv - INFO -   ✅ Found: projects.csv
+2026-04-21 12:57:19,300 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-21 12:57:19,314 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-21 12:57:19,314 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-21 12:57:24,578 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-21 12:57:26,980 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-21 12:57:26,998 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-21 12:57:26,999 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-21 12:57:32,105 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-21_12-57.txt
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - 
+==================================================
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - ==================================================
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - Insights from AI: To mitigate the high budget risk posed by three overdue projects despite heavy concentration in IT and Product, we must immediately audit these departments to identify and resolve resource bottlenecks. I recommend strategically reallocating underutilized capacity from high-spend technical areas to clear the backlog while increasing the disproportionately low security budget to safeguard our primary capital investments.
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - • Data: 18000€
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - • IT: 66500€
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - • Product: 45000€
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - • security: 5000€
+2026-04-21 12:57:32,105 - PMO_Engine - INFO - ==================================================
+2026-04-21 12:57:32,113 - PMO_Engine - INFO - ✅ Audit completed in 10.2s.
+2026-04-21 12:57:32,113 - venv - INFO - 📈 Executing data auditor..
+2026-04-21 12:57:32,127 - venv - INFO - 📈 Executing full analysis..
+2026-04-21 12:57:33,967 - venv - INFO - ✅ Full analysis completed successfully
+2026-04-21 12:57:33,967 - venv - INFO - ======================================================================
+
+2026-04-21 12:57:33,967 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-21 12:57:36,865 - venv - INFO - ✅ Latest logs displayed.
+2026-04-21 13:03:44,935 - root - INFO - Logging initialized. Session log: Logs\main_20260421_130344.log
+2026-04-21 13:03:44,935 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-21 13:03:44,935 - venv - INFO - End Time: 2026-04-21 13:03:44

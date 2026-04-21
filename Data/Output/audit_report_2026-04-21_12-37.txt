@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To address the three overdue projects, we must immediately audit and reallocate personnel from the high-spend IT and Product departments to resolve resource bottlenecks and restore delivery timelines. Furthermore, the disproportionately low $5,000 security budget must be increased to mitigate systemic risks, as current funding is insufficient to protect our significant $111,500 investment in technical infrastructure.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

@@ -23,17 +23,6 @@ from typing import Dict, Any, Optional ,List
 sys.path.insert(0, str(Path(__file__).parent.parent / "Utils"))
 import bar_graph_file as bg
 
-log_dir = "logs"
-# Cria pasta de logs se não existir
-if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-logging.basicConfig(level= logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
-        # Add encoding='utf-8' here to handle the emojis
-        logging.FileHandler(os.path.join(log_dir, "pmo_audit.log"), encoding='utf-8'),
-        logging.StreamHandler()
-    ]
-)
-log=logging.getLogger("PMO_Engine")
 start_time: float = time.time()
 # --- PROGRAMMING BASES: ENVIRONMENT ISOLATION ---
 # Carregamos as chaves do .env para garantir 0% de exposição no GitHub.
@@ -124,15 +113,27 @@ def main() -> None:
         - Data/output/audit_report_YYYY-MM-DD_HH-MM.txt: Executive summary
         - logs/pmo_audit.log: Complete execution history with timestamps
     """
+    
+    log_dir = "logs"
+    # Cria pasta de logs se não existir
+    if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
+    logging.basicConfig(level= logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
+            # Add encoding='utf-8' here to handle the emojis
+            logging.FileHandler(os.path.join(log_dir, "pmo_audit.log"), encoding='utf-8'),
+            logging.StreamHandler()
+        ]
+    )
+    log=logging.getLogger("PMO_Engine")
     file_path: str = "Data/Raw/projects.csv"
     report_dir: str = "Data/output"
 
     if not Path(file_path).exists() or not Path(file_path).is_file():
-        log.error(f"❌ Error: The file {file_path} does not exist.")
-        return
+            log.error(f"❌ Error: The file {file_path} does not exist.")
+        
     if not Path(report_dir).exists():
-        log.warning(f"⚠️ Warning: The directory {report_dir} does not exist.")
-        Path(report_dir).mkdir(parents=True, exist_ok=True) 
+            log.warning(f"⚠️ Warning: The directory {report_dir} does not exist.")
+            Path(report_dir).mkdir(parents=True, exist_ok=True) 
 
     try:
         # --- PROGRAMMING BASES: VECTORIZATION (Pandas) ---

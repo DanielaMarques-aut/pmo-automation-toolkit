@@ -53,9 +53,9 @@ from venv import logger
 
 
 # Configure logging
-LOG_DIR = Path("Logs")
-LOG_DIR.mkdir(exist_ok=True)
-def setup_logging(log_dir: Path = "logs") -> logging.Logger:
+
+
+def setup_logging(log_dir: Path = Path("Logs")) -> logging.Logger:
     """
     Set up logging configuration for the PMO Automation Engine.
     
@@ -73,9 +73,11 @@ def setup_logging(log_dir: Path = "logs") -> logging.Logger:
 
     """
     try:
+        LOG_DIR:Path = Path("Logs")
         log_dir.mkdir(exist_ok=True)
     except OSError as e:    
         print(f"Error creating log directory: {e}")
+    
     full_log_path = log_dir / f"main_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
     logging.basicConfig(
         level=logging.INFO,
@@ -86,14 +88,31 @@ def setup_logging(log_dir: Path = "logs") -> logging.Logger:
         ]
     )
     logger = logging.getLogger("PMO_Engine")
+    print(logger.log)  # This will print the logger object to confirm it's set up
+   
     logging.info(f"Logging initialized. Session log: {full_log_path}")
     return log_dir
+
+def VIEW_LATEST_LOGS(log_dir: Path = Path("Logs")) -> None:
+    """Reads the last 10 lines of the system log file."""
+    print("\n📜 --- ÚLTIMOS REGISTOS DO SISTEMA ---")
+    # Implementation for viewing latest logs would go here
+    try:
+        filename=sorted(log_dir.glob("main_*.log"), reverse=True)[0]  # Get the latest log file
+        with open(filename, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            for line in lines[-10:]:
+                print(line.strip())
+    except FileNotFoundError:
+        print("⚠️ Ficheiro de log ainda não criado.")
+
+
 
 # ============================================================================
 # VALIDATION & SETUP FUNCTIONS
 # ============================================================================
 
-def validate_environment(key: Path, default: Optional[str] = None) -> bool:
+def validate_environment(key: Path= Path(".env"), default: Optional[str] = None) -> bool:
     """
     Verify that all required files and directories exist.
 
@@ -131,8 +150,8 @@ def validate_environment(key: Path, default: Optional[str] = None) -> bool:
     # Check files
     for file in required_files:
         if not file.exists():
-            logger.warning(f"⚠️ File not found: {file} (optional if env vars are set)")~
-             raise ValueError(f"Environment variable '{file}' must be set via .env file.")
+            logger.warning(f"⚠️ File not found: {file} (optional if env vars are set)")
+            raise ValueError(f"Environment variable '{file}' must be set via .env file.")
     
     # Check directories
     for dir_path in required_dirs:
@@ -510,9 +529,9 @@ def show_menu() -> str:
     5. Generate Visualizations
     6. View Recent Reports
     7. Exit
-    
+    8. View Latest Logs
     Returns:
-        str: User's selected option (1-7)
+        str: User's selected option (1-8)
 
     """
     # Detailed menu display for the user
@@ -527,7 +546,8 @@ def show_menu() -> str:
         "4": "Department Alerts (V1.1) ⭐ NEW",
         "5": "Generate Visualizations (Dashboards & Charts)",
         "6": "View Recent Reports (Audit files & Logs)",
-        "7": "Exit (Close application)"
+        "7": "Exit (Close application)",
+        "8":"view latest logs"
     }
 
     for key, description in menu_options.items():
@@ -536,10 +556,10 @@ def show_menu() -> str:
     print("="*70)
     
     while True:
-        choice:str = input("🎯 Select option (1-7): ").strip()
+        choice:str = input("🎯 Select option (1-8): ").strip()
         if choice in menu_options:
             return choice
-        print("❌ Invalid selection. Please enter 1-7.")
+        print("❌ Invalid selection. Please enter 1-8.")
 
 def Run_department_alerts() -> None:
     """
@@ -621,22 +641,38 @@ def main() -> None:
             option: str = show_menu()
             
             if option == "1":
+                setup_logging()  # Ensure logging is initialized before running analysis
                 run_full_analysis()
+                logger.info("✅ Full PMO Analysis workflow completed.")
             elif option == "2":
+                setup_logging()
                 run_quick_audit()
+                logger.info("✅ Quick Project Audit completed.")
             elif option == "3":
+                setup_logging()
                 run_strategic_mitigation()
+                logger.info("✅ Strategic Mitigation workflow completed.")
             elif option == "4":
+                setup_logging()
                 Run_department_alerts()   
+                logger.info("✅ Department Alerts workflow completed.")
             elif option == "5":
+                setup_logging()
                 generate_visualizations()
+                logger.info("✅ Visualization generation completed.")
             elif option == "6":
+                setup_logging()
                 view_recent_reports()
+                logger.info("✅ Recent reports displayed.")
             elif option == "7":
+                setup_logging()
                 logger.info("👋 Shutting down PMO Engine...")
                 logger.info(f"End Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                 print("\n✅ Thank you for using PMO Automation Engine!")
                 break
+            elif option == "8":
+                VIEW_LATEST_LOGS()
+                logger.info("✅ Latest logs displayed.")
         
         except KeyboardInterrupt:
             logger.info("⏸️ Application interrupted by user")

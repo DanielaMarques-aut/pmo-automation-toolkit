@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: Given the heavy capital concentration in IT and Product ($111,500 combined), the three overdue projects present a significant budget risk due to high burn rates without realized ROI. I recommend an immediate reallocation of technical resources from lower-spend departments to clear the project backlog and stabilize our primary investment centers.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

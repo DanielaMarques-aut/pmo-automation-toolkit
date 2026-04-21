@@ -1,0 +1,18 @@
+2026-04-21 12:38:50,214 - venv - ERROR - ❌ Unexpected error: 'Logger' object has no attribute 'listeners'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 643, in main
+    setup_logging()  # Ensure logging is initialized before running analysis
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\daniq\Carrer\main.py", line 91, in setup_logging
+    print(logger.listeners())
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'Logger' object has no attribute 'listeners'
+2026-04-21 12:39:19,086 - venv - ERROR - ❌ Unexpected error: 'Logger' object has no attribute 'listeners'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 667, in main
+    setup_logging()
+  File "c:\Users\daniq\Carrer\main.py", line 91, in setup_logging
+    print(logger.log)  # This will print the logger object to confirm it's set up
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'Logger' object has no attribute 'listeners'
+2026-04-21 12:39:20,777 - venv - INFO - ⏸️ Application interrupted by user

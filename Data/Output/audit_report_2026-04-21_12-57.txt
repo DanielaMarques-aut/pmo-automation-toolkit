@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate the high budget risk posed by three overdue projects despite heavy concentration in IT and Product, we must immediately audit these departments to identify and resolve resource bottlenecks. I recommend strategically reallocating underutilized capacity from high-spend technical areas to clear the backlog while increasing the disproportionately low security budget to safeguard our primary capital investments.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================
