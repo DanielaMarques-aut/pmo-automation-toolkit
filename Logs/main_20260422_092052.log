@@ -1,0 +1,71 @@
+2026-04-22 09:20:52,191 - root - INFO - Logging initialized. Session log: Logs\main_20260422_092052.log
+2026-04-22 09:20:52,191 - venv - INFO - 
+======================================================================
+2026-04-22 09:20:52,191 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:20:52,191 - venv - INFO - ======================================================================
+2026-04-22 09:20:52,191 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:20:52,202 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:20:52,202 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:20:52,213 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:20:52,213 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:20:59,204 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:21:01,906 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:21:01,913 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:21:01,915 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:21:07,938 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:21:07,946 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-21.txt
+2026-04-22 09:21:07,946 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:21:07,946 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:21:07,948 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:21:07,948 - PMO_Engine - INFO - Insights from AI: To mitigate the risk of capital being trapped in non-performing assets, we must address the delivery bottleneck indicated by the three overdue projects despite significant budget concentration in IT and Product. I recommend a strategic reallocation of technical resources from lower-spend areas like Data and Marketing to resolve these delays immediately and protect our primary financial investments.
+2026-04-22 09:21:07,951 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:21:07,951 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:21:07,951 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:21:07,951 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:21:07,953 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:21:07,953 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:21:07,953 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:21:07,955 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:21:07,955 - PMO_Engine - INFO - ✅ Audit completed in 12.3s.
+2026-04-22 09:21:07,955 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:21:07,988 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:21:08,013 - root - INFO - ✅ CSV carregado: C:\Users\daniq\Carrer\data\raw\dados_pmo_segunda2.csv (9 linhas)
+2026-04-22 09:21:08,013 - root - WARNING - ⚠️ Encontrados valores nulos no Status. A limpar...
+2026-04-22 09:21:08,024 - root - WARNING - ⚠️ Baixa taxa de conclusão detectada: Apenas 25.0% dos projetos estão concluídos.
+2026-04-22 09:21:08,026 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:21:17,565 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:21:17,571 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:21:19,202 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-22 09:21:20,206 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:21:22,263 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-22 09:21:24,283 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:21:27,793 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-22 09:21:31,809 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:22:01,190 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-22 09:22:01,194 - root - INFO - 🔍 A testar a configuração da API do Slack...
+2026-04-22 09:22:01,194 - root - INFO - webhook_url: Configurado (Primeiros 5 caracteres: https...)
+2026-04-22 09:22:01,194 - root - INFO - token: Configurado (Primeiros 5 caracteres: xoxb-...)
+2026-04-22 09:22:01,194 - root - INFO - canal_id: Configurado (Primeiros 5 caracteres: C0AN4...)
+2026-04-22 09:22:02,421 - root - INFO - ✅ Notificação enviada para o Slack com sucesso!
+2026-04-22 09:22:02,424 - root - INFO - 🔍 Enviando ficheiro 'Análise manual recomendada devido a erro técnico.' para o canal 'C0AN45EJSP4' no Slack...
+2026-04-22 09:22:02,424 - venv - ERROR - ❌ Critical Failure during full analysis: [Errno 2] No such file or directory: b'An\xc3\xa1lise manual recomendada devido a erro t\xc3\xa9cnico.'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 281, in run_full_analysis
+    run_analysis_main.enviar_notificacoes(relatorio_kpis, analise_ia)
+  File "c:\Users\daniq\Carrer\Scripts\Utils\agrupardadospandas.py", line 351, in enviar_notificacoes
+    notificaçao.enviar_ficheiro_slack(arquivo, canal)
+  File "c:\Users\daniq\Carrer\Scripts\Utils\notificaçao.py", line 424, in enviar_ficheiro_slack
+    response = client.files_upload_v2(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\daniq\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\slack_sdk\web\client.py", line 4040, in files_upload_v2
+    f = _to_v2_file_upload_item(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\daniq\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\slack_sdk\web\internal_utils.py", line 342, in _to_v2_file_upload_item
+    with open(os.fsencode(file), "rb") as readable:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: b'An\xc3\xa1lise manual recomendada devido a erro t\xc3\xa9cnico.'
+2026-04-22 09:22:02,443 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:25:55,198 - root - INFO - Logging initialized. Session log: Logs\main_20260422_092555.log
+2026-04-22 09:25:55,200 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 09:25:55,200 - venv - INFO - End Time: 2026-04-22 09:25:55

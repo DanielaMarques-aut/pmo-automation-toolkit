@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate the risk of capital being trapped in non-performing assets, we must address the delivery bottleneck indicated by the three overdue projects despite significant budget concentration in IT and Product. I recommend a strategic reallocation of technical resources from lower-spend areas like Data and Marketing to resolve these delays immediately and protect our primary financial investments.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

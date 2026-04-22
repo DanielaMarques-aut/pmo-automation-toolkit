@@ -1,0 +1,12 @@
+2026-04-22 08:44:26,329 - root - INFO - Logging initialized. Session log: Logs\main_20260422_084426.log
+2026-04-22 08:44:26,329 - venv - INFO - 
+======================================================================
+2026-04-22 08:44:26,329 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 08:44:26,339 - venv - INFO - ======================================================================
+2026-04-22 08:44:26,339 - venv - INFO - 📊 Checking data sources...
+2026-04-22 08:44:26,339 - venv - ERROR - [ERROR] [pmo] Ficheiro não encontrado: projects.csv
+2026-04-22 08:44:26,339 - venv - ERROR - Cannot proceed: data sources missing
+2026-04-22 08:44:26,349 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 08:46:42,068 - root - INFO - Logging initialized. Session log: Logs\main_20260422_084642.log
+2026-04-22 08:46:42,068 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 08:46:42,068 - venv - INFO - End Time: 2026-04-22 08:46:42

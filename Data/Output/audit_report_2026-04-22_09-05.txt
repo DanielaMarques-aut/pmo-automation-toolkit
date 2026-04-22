@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: The heavy concentration of capital in IT and Product alongside three overdue projects indicates a high burn rate without realized ROI, posing a significant risk to the fiscal year’s delivery targets. We must immediately pivot technical resources from the IT and Product pipelines to clear the project backlog and re-evaluate the disproportionately low security budget to mitigate long-term operational vulnerability.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

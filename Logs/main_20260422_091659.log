@@ -1,0 +1,87 @@
+2026-04-22 09:16:59,776 - root - INFO - Logging initialized. Session log: Logs\main_20260422_091659.log
+2026-04-22 09:16:59,776 - venv - INFO - 
+======================================================================
+2026-04-22 09:16:59,776 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:16:59,776 - venv - INFO - ======================================================================
+2026-04-22 09:16:59,776 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:16:59,776 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:16:59,776 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:16:59,788 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:16:59,795 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:17:07,433 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:17:10,256 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:17:10,266 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:17:10,267 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:17:39,032 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:17:39,041 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-17.txt
+2026-04-22 09:17:39,041 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:17:39,042 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:17:39,042 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:17:39,044 - PMO_Engine - INFO - Insights from AI: To mitigate the significant risk of budget slippage from three overdue projects, we must immediately reallocate technical resources from IT and Product to prioritize the completion of existing backlogs over new initiatives. Furthermore, the disproportionately low security budget relative to our high IT infrastructure spend requires an urgent financial recalibration to prevent costly operational vulnerabilities.
+2026-04-22 09:17:39,045 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:17:39,045 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:17:39,045 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:17:39,047 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:17:39,047 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:17:39,047 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:17:39,049 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:17:39,049 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:17:39,049 - PMO_Engine - INFO - ✅ Audit completed in 34.9s.
+2026-04-22 09:17:39,049 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:17:39,088 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:17:39,126 - root - INFO - ✅ CSV carregado: C:\Users\daniq\Carrer\data\raw\dados_pmo_segunda.csv (7 linhas)
+2026-04-22 09:17:39,126 - root - ERROR - 💥 Colunas em falta: ['Status', 'Projeto', 'Tempo_Gasto']
+2026-04-22 09:17:39,126 - root - ERROR - 💥 Falha na preparação dos dados.
+2026-04-22 09:17:39,126 - venv - ERROR - ❌ Critical Failure during full analysis: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 280, in run_full_analysis
+    relatorio_kpis, analise_ia = run_analysis_main.calcular_saude_projeto(Path.cwd() / "data" /"raw"/ "dados_pmo_segunda.csv")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+2026-04-22 09:17:39,132 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:19:06,247 - root - INFO - Logging initialized. Session log: Logs\main_20260422_091906.log
+2026-04-22 09:19:06,247 - venv - INFO - 
+======================================================================
+2026-04-22 09:19:06,255 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:19:06,255 - venv - INFO - ======================================================================
+2026-04-22 09:19:06,255 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:19:06,258 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:19:06,260 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:19:06,261 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:19:06,263 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:19:06,263 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:19:10,157 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:19:10,166 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:19:10,167 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:19:25,525 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:19:25,540 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-19.txt
+2026-04-22 09:19:25,542 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:19:25,542 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:19:25,542 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:19:25,545 - PMO_Engine - INFO - Insights from AI: To mitigate the financial risk posed by three overdue projects concentrated in our high-spend IT and Product departments, we must immediately audit these allocations to identify and resolve resource bottlenecks. I recommend a strategic reallocation of project management capacity to clear the backlog while reevaluating our minimal Security budget to ensure we aren't trading delivery speed for critical operational vulnerability.
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:19:25,546 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:19:25,548 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:19:25,548 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:19:25,548 - PMO_Engine - INFO - ✅ Audit completed in 141.4s.
+2026-04-22 09:19:25,548 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:19:25,578 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:19:25,589 - root - INFO - ✅ CSV carregado: C:\Users\daniq\Carrer\data\raw\dados_pmo_segunda.csv (7 linhas)
+2026-04-22 09:19:25,589 - root - ERROR - 💥 Colunas em falta: ['Status', 'Projeto', 'Tempo_Gasto']
+2026-04-22 09:19:25,591 - root - ERROR - 💥 Falha na preparação dos dados.
+2026-04-22 09:19:25,591 - venv - ERROR - ❌ Critical Failure during full analysis: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 280, in run_full_analysis
+    relatorio_kpis, analise_ia = run_analysis_main.calcular_saude_projeto(Path.cwd() / "data" /"raw"/ "dados_pmo_segunda.csv")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+2026-04-22 09:19:25,591 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:19:38,805 - root - INFO - Logging initialized. Session log: Logs\main_20260422_091938.log
+2026-04-22 09:19:38,805 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 09:19:38,805 - venv - INFO - End Time: 2026-04-22 09:19:38

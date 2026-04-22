@@ -1,0 +1,11 @@
+📊 Executive Report
+==================================================
+Insights from AI: To mitigate significant budget risk, we must immediately audit the IT and Product departments—which command nearly 80% of total spend—to identify why high capital investment is not preventing project delays. I recommend a tactical reallocation of personnel from lower-spend areas to resolve the three overdue projects and protect the ROI of our primary technology investments.
+--------------------------------------------------
+Budget Distribution by Department:
+• Data: 18000€
+• IT: 66500€
+• Marketing: 8200€
+• Product: 45000€
+• security: 5000€
+==================================================

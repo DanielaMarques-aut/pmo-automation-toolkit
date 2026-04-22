@@ -1,0 +1,41 @@
+2026-04-22 09:04:50,377 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090450.log
+2026-04-22 09:04:50,377 - venv - INFO - 
+======================================================================
+2026-04-22 09:04:50,377 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:04:50,377 - venv - INFO - ======================================================================
+2026-04-22 09:04:50,377 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:04:50,383 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:04:50,383 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:04:50,383 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:04:50,388 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:04:57,429 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:05:02,787 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:05:02,799 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:05:02,802 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:05:09,922 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:05:09,930 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-05.txt
+2026-04-22 09:05:09,930 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:05:09,933 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:05:09,934 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:05:09,935 - PMO_Engine - INFO - Insights from AI: The heavy concentration of capital in IT and Product alongside three overdue projects indicates a high burn rate without realized ROI, posing a significant risk to the fiscal year’s delivery targets. We must immediately pivot technical resources from the IT and Product pipelines to clear the project backlog and re-evaluate the disproportionately low security budget to mitigate long-term operational vulnerability.
+2026-04-22 09:05:09,935 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:05:09,938 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:05:09,938 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:05:09,939 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:05:09,940 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:05:09,940 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:05:09,940 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:05:09,940 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:05:09,940 - PMO_Engine - INFO - ✅ Audit completed in 15.4s.
+2026-04-22 09:05:09,940 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:05:09,980 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:05:09,982 - venv - ERROR - ❌ Critical Failure during full analysis: carregar_dados() missing 1 required positional argument: 'caminho_csv'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 278, in run_full_analysis
+    run_analysis_main.carregar_dados()
+TypeError: carregar_dados() missing 1 required positional argument: 'caminho_csv'
+2026-04-22 09:05:09,982 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:05:54,973 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090554.log
+2026-04-22 09:05:54,973 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 09:05:54,973 - venv - INFO - End Time: 2026-04-22 09:05:54

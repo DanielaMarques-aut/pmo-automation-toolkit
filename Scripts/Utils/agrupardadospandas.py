@@ -15,10 +15,14 @@ Key Functions:
 Each function includes comprehensive logging for audit trails and error tracking.
 """
 
+import os
+
 import pandas as pd
 import logging
 from pathlib import Path
 from typing import Optional, Dict, List, Union, Any
+from importlib.metadata import metadata
+import inspect
 import notificaçao
 from notificaçao import gerar_report_pmo
 from testaiproject import analisar_risco_com_ia
@@ -346,15 +350,22 @@ Args:
     notificaçao.enviar_alerta_slack(payload, layout_final)
     notificaçao.enviar_ficheiro_slack(arquivo, canal)
 
-if __name__ == "__main__":
-    caminho = 'dados_pmo_segunda2.csv'
-   # 1. Recebe os dois valores separadamente (Unpacking)
-    relatorio_kpis, analise_ia = calcular_saude_projeto(caminho)
-    enviar_notificacoes(relatorio_kpis, caminho, analise_ia=analise_ia)
 
-    if  relatorio_kpis:
-     print( relatorio_kpis, analise_ia)
-    else:
-        logging.error("💥 Falha ao calcular a saúde do projeto. Verifique os logs para detalhes.")
-        enviar_notificacoes(resultado, caminho) 
-    
+if __name__ == "__main__":
+    # Get the name of the file that initiated the execution
+    stack = inspect.stack()
+    # The last element in the stack is usually the entry point script
+    entry_point_file = os.path.basename(stack[-1].filename)
+    if entry_point_file == "main.py":
+        
+        caminho = 'dados_pmo_segunda2.csv'
+    # 1. Recebe os dois valores separadamente (Unpacking)
+        relatorio_kpis, analise_ia = calcular_saude_projeto(caminho)
+        enviar_notificacoes(relatorio_kpis, caminho, analise_ia=analise_ia)
+
+        if  relatorio_kpis:
+            print( relatorio_kpis, analise_ia)
+        else:
+            logging.error("💥 Falha ao calcular a saúde do projeto. Verifique os logs para detalhes.")
+           #enviar_notificacoes(resultado, caminho) 
+        

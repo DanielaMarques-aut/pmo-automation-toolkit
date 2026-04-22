@@ -189,11 +189,20 @@ def validate_data_sources(data_dir: Path = Path("Data/Raw")) -> bool:
     logger.info("📊 Checking data sources...")
     
     data_dir = Path("Data/Raw")
-    required_files: list[str] = [
+    required_files: list[List] = [
         "projects.csv",
         "project_status.csv",
         "dados_pmo_segunda.csv"
     ]
+
+    if not required_files:
+        logger.warning("⚠️ No required files specified for validation.")
+        return False # Early exit if no files are defined
+    for file in required_files:
+        # 1. Verificação de Existência
+        if not os.path.exists(data_dir / file):
+            logger.error(f"[ERROR] [pmo] Ficheiro não encontrado: {data_dir / file}")
+            return False
   
     found_files: list[str] = []
     for file in required_files:
@@ -203,6 +212,11 @@ def validate_data_sources(data_dir: Path = Path("Data/Raw")) -> bool:
             logger.info(f"  ✅ Found: {file}")
         else:
             logger.warning(f"  ⚠️ Missing: {file}")
+     # 3. Verificação de Permissão (Prevenção de Crash)
+        if not os.access(file_path, os.R_OK):
+            logger.error(f"[ERROR] [pmo] Sem permissão de leitura: {file_path}")
+            return False
+
     # Logic Check: Ensure we have a 1:1 match
     if len(found_files) != len(required_files):
        missing_count = len(required_files) - len(found_files)
@@ -251,7 +265,7 @@ def run_full_analysis() -> None:
        # Scoped imports to manage complex dependencies
         from Scripts.Analysis.PMO_Consolidated_Engine_v1_5 import main as pmo_engine_main
         from Scripts.Analysis.Data_Auditor_project_status_using_Groupby import run_consolidated_audit as data_auditor_main
-        from Scripts.Analysis.Agregação_de_dados_V1 import run_analysis as run_analysis_main
+        from Scripts.Utils import agrupardadospandas as run_analysis_main
 
 
         logger.info("📈 Executing PMO Consolidated Engine...")
@@ -261,7 +275,11 @@ def run_full_analysis() -> None:
         data_auditor_main(Path.cwd() / "data" /"raw"/ "projects.csv")
 
         logger.info("📈 Executing full analysis..")
-        run_analysis_main()
+        run_analysis_main.entry_point_file = "main.py"  # Set the entry point for the analysis module
+        run_analysis_main.__name__ = "main.py"  # Ensure the module recognizes it's being run from main.py
+        relatorio_kpis, analise_ia = run_analysis_main.calcular_saude_projeto(Path.cwd() / "data" /"raw"/ "dados_pmo_segunda2.csv")
+        run_analysis_main.enviar_notificacoes(relatorio_kpis, analise_ia)
+
 
         logger.info("✅ Full analysis completed successfully")
         logger.info("="*70 + "\n")

@@ -1,0 +1,13 @@
+2026-04-22 08:41:03,397 - root - INFO - Logging initialized. Session log: Logs\main_20260422_084103.log
+2026-04-22 08:41:03,397 - venv - INFO - 
+======================================================================
+2026-04-22 08:41:03,397 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 08:41:03,397 - venv - INFO - ======================================================================
+2026-04-22 08:41:03,402 - venv - INFO - 📊 Checking data sources...
+2026-04-22 08:41:03,404 - venv - WARNING -   ⚠️ Missing: Data\Raw\projects.csv
+2026-04-22 08:41:03,405 - venv - ERROR - [ERROR] [pmo] Sem permissão de leitura: Data\Raw\Data\Raw\projects.csv
+2026-04-22 08:41:03,409 - venv - ERROR - Cannot proceed: data sources missing
+2026-04-22 08:41:03,409 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 08:42:55,748 - root - INFO - Logging initialized. Session log: Logs\main_20260422_084255.log
+2026-04-22 08:42:55,748 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 08:42:55,748 - venv - INFO - End Time: 2026-04-22 08:42:55

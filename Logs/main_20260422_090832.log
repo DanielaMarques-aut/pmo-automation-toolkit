@@ -1,0 +1,37 @@
+2026-04-22 09:08:32,254 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090832.log
+2026-04-22 09:08:32,255 - venv - INFO - 
+======================================================================
+2026-04-22 09:08:32,256 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:08:32,256 - venv - INFO - ======================================================================
+2026-04-22 09:08:32,258 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:08:32,259 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:08:32,259 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:08:32,265 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:08:32,270 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:08:38,366 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:08:41,587 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:08:41,600 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:08:41,600 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:08:50,502 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-08.txt
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - Insights from AI: To mitigate the budget risk associated with three overdue projects, we must immediately audit and reallocate technical personnel from the high-spend IT and Product departments to clear existing delivery bottlenecks. Furthermore, we should rebalance departmental funding to increase the Security budget, ensuring our substantial infrastructure investments are not compromised by the current disproportionately low oversight.
+2026-04-22 09:08:50,502 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:08:50,515 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:08:50,516 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:08:50,516 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:08:50,516 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:08:50,518 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:08:50,518 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:08:50,520 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:08:50,520 - PMO_Engine - INFO - ✅ Audit completed in 14.7s.
+2026-04-22 09:08:50,520 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:08:50,558 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:08:50,558 - venv - INFO - ✅ Full analysis completed successfully
+2026-04-22 09:08:50,558 - venv - INFO - ======================================================================
+
+2026-04-22 09:08:50,558 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:11:55,445 - venv - INFO - ⏸️ Application interrupted by user

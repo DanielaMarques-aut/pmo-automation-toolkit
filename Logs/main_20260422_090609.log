@@ -1,0 +1,81 @@
+2026-04-22 09:06:09,235 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090609.log
+2026-04-22 09:06:09,239 - venv - INFO - 
+======================================================================
+2026-04-22 09:06:09,239 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:06:09,239 - venv - INFO - ======================================================================
+2026-04-22 09:06:09,239 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:06:09,244 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:06:09,244 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:06:09,252 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:06:09,252 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:06:16,315 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:06:19,705 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:06:19,712 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:06:19,715 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:06:28,977 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-06.txt
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - Insights from AI: To mitigate budget risk and resolve the three overdue projects, we must immediately audit the IT and Product departments—which consume 78% of the total budget—to reallocate underutilized personnel toward stagnant delivery pipelines. Furthermore, we should rebalance a portion of this high technical spend to bolster the critically underfunded security sector, ensuring our primary investments are not compromised by operational vulnerabilities.
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:06:28,981 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:06:28,984 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:06:28,984 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:06:28,986 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:06:28,986 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:06:28,986 - PMO_Engine - INFO - ✅ Audit completed in 15.7s.
+2026-04-22 09:06:28,987 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:06:29,006 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:06:29,006 - venv - ERROR - ❌ Critical Failure during full analysis: module 'Scripts.Utils.agrupardadospandas' has no attribute 'main'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 279, in run_full_analysis
+    run_analysis_main.main()
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'Scripts.Utils.agrupardadospandas' has no attribute 'main'
+2026-04-22 09:06:29,011 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:07:54,836 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090754.log
+2026-04-22 09:07:54,836 - venv - INFO - 
+======================================================================
+2026-04-22 09:07:54,838 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:07:54,838 - venv - INFO - ======================================================================
+2026-04-22 09:07:54,840 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:07:54,842 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:07:54,844 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:07:54,846 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:07:54,846 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:07:54,848 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:07:58,316 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:07:58,321 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:07:58,323 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:08:05,654 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:08:05,663 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-08.txt
+2026-04-22 09:08:05,665 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:08:05,665 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:08:05,665 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:08:05,668 - PMO_Engine - INFO - Insights from AI: To mitigate the high budget risk stemming from nearly 80% of capital being concentrated in IT and Product alongside three overdue milestones, we must immediately reallocate human capital to resolve these delivery bottlenecks. I recommend a tactical shift of cross-departmental support to these high-spend areas while auditing whether the minimal security budget is creating technical debt that contributes to our current operational friction.
+2026-04-22 09:08:05,668 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:08:05,668 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:08:05,668 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:08:05,668 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:08:05,670 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:08:05,670 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:08:05,670 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:08:05,670 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:08:05,672 - PMO_Engine - INFO - ✅ Audit completed in 112.4s.
+2026-04-22 09:08:05,672 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:08:05,705 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:08:05,707 - venv - ERROR - ❌ Critical Failure during full analysis: module 'Scripts.Utils.agrupardadospandas' has no attribute 'main'
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 279, in run_full_analysis
+    run_analysis_main.__name__ = "main.py"  # Ensure the module recognizes it's being run from main.py
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'Scripts.Utils.agrupardadospandas' has no attribute 'main'
+2026-04-22 09:08:05,755 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:08:24,306 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090824.log
+2026-04-22 09:08:24,306 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 09:08:24,306 - venv - INFO - End Time: 2026-04-22 09:08:24

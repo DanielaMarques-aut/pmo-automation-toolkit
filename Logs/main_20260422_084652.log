@@ -1,0 +1,92 @@
+2026-04-22 08:46:52,080 - root - INFO - Logging initialized. Session log: Logs\main_20260422_084652.log
+2026-04-22 08:46:52,080 - venv - INFO - 
+======================================================================
+2026-04-22 08:46:52,080 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 08:46:52,089 - venv - INFO - ======================================================================
+2026-04-22 08:46:52,090 - venv - INFO - 📊 Checking data sources...
+2026-04-22 08:46:52,090 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 08:46:52,092 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 08:46:52,099 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 08:46:52,099 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 08:47:12,250 - venv - ERROR - ❌ Structural Error: Failed to import PMO engine components: No module named 'importlib.metadata.diagnose'
+2026-04-22 08:47:12,251 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 08:50:04,182 - root - INFO - Logging initialized. Session log: Logs\main_20260422_085004.log
+2026-04-22 08:50:04,182 - venv - INFO - 
+======================================================================
+2026-04-22 08:50:04,182 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 08:50:04,182 - venv - INFO - ======================================================================
+2026-04-22 08:50:04,182 - venv - INFO - 📊 Checking data sources...
+2026-04-22 08:50:04,182 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 08:50:04,195 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 08:50:04,195 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 08:50:04,195 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 08:50:06,176 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 08:50:11,333 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 08:50:11,363 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 08:50:11,364 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 08:50:24,896 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 08:50:24,901 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_08-50.txt
+2026-04-22 08:50:24,911 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 08:50:24,913 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 08:50:24,913 - PMO_Engine - INFO - ==================================================
+2026-04-22 08:50:24,913 - PMO_Engine - INFO - Insights from AI: To mitigate the significant budget risk posed by high IT and Product expenditures coupled with three overdue projects, we must immediately reallocate senior technical talent to clear the delivery bottleneck. Furthermore, we should reassess the disproportionately low Security budget to ensure that resource heavy-loading in other departments isn't creating long-term systemic vulnerabilities.
+2026-04-22 08:50:24,915 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 08:50:24,915 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 08:50:24,915 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 08:50:24,915 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 08:50:24,917 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 08:50:24,917 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 08:50:24,917 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 08:50:24,917 - PMO_Engine - INFO - ==================================================
+2026-04-22 08:50:24,917 - PMO_Engine - INFO - ✅ Audit completed in 194.4s.
+2026-04-22 08:50:24,919 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 08:50:24,960 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 08:50:24,960 - venv - ERROR - ❌ Critical Failure during full analysis: 'module' object is not callable
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 278, in run_full_analysis
+    run_analysis_main()
+TypeError: 'module' object is not callable
+2026-04-22 08:50:24,960 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:00:15,500 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090015.log
+2026-04-22 09:00:15,500 - venv - INFO - 
+======================================================================
+2026-04-22 09:00:15,500 - venv - INFO - 🚀 STARTING FULL PMO ANALYSIS
+2026-04-22 09:00:15,500 - venv - INFO - ======================================================================
+2026-04-22 09:00:15,500 - venv - INFO - 📊 Checking data sources...
+2026-04-22 09:00:15,505 - venv - INFO -   ✅ Found: projects.csv
+2026-04-22 09:00:15,505 - venv - INFO -   ✅ Found: project_status.csv
+2026-04-22 09:00:15,510 - venv - INFO -   ✅ Found: dados_pmo_segunda.csv
+2026-04-22 09:00:15,510 - venv - INFO - ✅ Data validation passed (3 sources found)
+2026-04-22 09:00:15,510 - venv - INFO - 📈 Executing PMO Consolidated Engine...
+2026-04-22 09:00:18,732 - PMO_Engine - INFO - Relatório visual gerado com sucesso! Check Data/output/budget_distribution.png
+2026-04-22 09:00:18,738 - PMO_Engine - INFO - 🤖 Generating AI insights...
+2026-04-22 09:00:18,738 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-04-22 09:00:26,246 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-04-22 09:00:26,259 - PMO_Engine - INFO - ✅ Report saved to Data/output/audit_report_2026-04-22_09-00.txt
+2026-04-22 09:00:26,261 - PMO_Engine - INFO - 
+==================================================
+2026-04-22 09:00:26,261 - PMO_Engine - INFO - 📊 Executive Report
+2026-04-22 09:00:26,261 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:00:26,264 - PMO_Engine - INFO - Insights from AI: To mitigate the significant financial risk posed by three overdue projects, we must immediately audit the IT and Product departments, which collectively consume nearly 80% of the total budget. I recommend reallocating underutilized operational capacity from Marketing to resolve technical bottlenecks and ensuring that our minimal Security investment is not further compromised by these delivery delays.
+2026-04-22 09:00:26,264 - PMO_Engine - INFO - --------------------------------------------------
+2026-04-22 09:00:26,264 - PMO_Engine - INFO - Budget Distribution by Department:
+2026-04-22 09:00:26,268 - PMO_Engine - INFO - • Data: 18000€
+2026-04-22 09:00:26,268 - PMO_Engine - INFO - • IT: 66500€
+2026-04-22 09:00:26,270 - PMO_Engine - INFO - • Marketing: 8200€
+2026-04-22 09:00:26,270 - PMO_Engine - INFO - • Product: 45000€
+2026-04-22 09:00:26,272 - PMO_Engine - INFO - • security: 5000€
+2026-04-22 09:00:26,277 - PMO_Engine - INFO - ==================================================
+2026-04-22 09:00:26,278 - PMO_Engine - INFO - ✅ Audit completed in 795.8s.
+2026-04-22 09:00:26,278 - venv - INFO - 📈 Executing data auditor..
+2026-04-22 09:00:26,310 - venv - INFO - 📈 Executing full analysis..
+2026-04-22 09:00:26,310 - venv - ERROR - ❌ Critical Failure during full analysis: 'module' object is not callable
+Traceback (most recent call last):
+  File "c:\Users\daniq\Carrer\main.py", line 278, in run_full_analysis
+    run_analysis_main.carregar_dados()
+    ^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2026-04-22 09:00:26,358 - venv - INFO - ✅ Full PMO Analysis workflow completed.
+2026-04-22 09:00:37,118 - root - INFO - Logging initialized. Session log: Logs\main_20260422_090037.log
+2026-04-22 09:00:37,118 - venv - INFO - 👋 Shutting down PMO Engine...
+2026-04-22 09:00:37,118 - venv - INFO - End Time: 2026-04-22 09:00:37
